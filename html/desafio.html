@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE SYSTEM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="vh-100">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid d-flex justify-content-between">
+                <a class="navbar-brand">Simple por Galiney</a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav d-flex">
+                        <a class="nav-link" href="./instrucoes.html">Instruções</a>
+                        <a class="nav-link" aria-current="page" href="./batalha.html">Batalha</a>
+                        <a class="nav-link active" href="./desafio.html">Desafio</a>
+                        <a class="nav-link" href="./sorte.html">Sorte</a>
+                        <a class="nav-link" href="./personagens.html">Personagens</a>
+                    </div>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control-sm mx-1" type="email" placeholder="email" aria-label="email">
+                    <input class="form-control-sm mx-1" type="senha" placeholder="senha" aria-label="senha">
+                    <button class="btn btn-outline-success mx-1 my-2 my-sm-0" type="submit">Entrar</button>
+                    <button class="btn btn-outline-info mx-1 my-2 my-sm-0" type="submit">Registrar</button>
+                </form>
+            </div>
+        </nav>
+
+        <div class="w-100 h-75 justify-content-center align-items-center d-flex">
+
+            <div class="card w-75">
+                <h5 class="card-header">Desafio</h5>
+                <div class="card-body container">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="personagem1">Personagem</label>
+                            <select class="form-control" id="personagem1" name="Personagem 1">
+                                <option value="opcao1">Opção 1</option>
+                                <option value="opcao2">Opção 2</option>
+                                <option value="opcao3">Opção 3</option>
+                                <option value="opcao4">Opção 4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="Atributo">Atributo a Comparar</label>
+                            <select class="form-control" id="Atributo" name="Atributo">
+                                <option value="D4">Força</option>
+                                <option value="D6">Destreza</option>
+                                <option value="D8">Percepção</option>
+                                <option value="D12">Inteligencia</option>
+                                <option value="D20">Sorte</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="personagem2">Dificuldade</label>
+                            <select class="form-control" id="personagem2" name="Personagem 2">
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Fulano</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Nível 1</h6>
+                                </div>
+                                <div class="card-body ">
+                                    <p class="mb-1">Força: <span class="fw-semibold">1</span></p>
+                                    <p class="mb-1 ">Destreza: <span class="fw-semibold">1</span></p>
+                                    <p class="mb-1 ">Percepção: <span class="fw-semibold">1</span> </p>
+                                    <p>Inteligência: <span class="fw-semibold">1</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rolagem dos Dados</h5>
+                                    <div class="row mt-4">
+                                        <div class="col-5 d-flex justify-content-center">
+                                            <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
+                                                style="width: 4rem; height: 4rem;">
+                                                <p class="mb-1 fw-bold fs-4">4</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-center align-items-center ">
+                                            <p class="fs-1">X</p>
+                                        </div>
+                                        <div class="col-5 d-flex justify-content-center">
+                                            <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
+                                                style="width: 4rem; height: 4rem;">
+                                                <p class="mb-1 fw-bold fs-4">4</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">Rolar</a>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="m-0">Resultado: <span class="fw-semibold">0</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Dificuldade</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Nível 8</h6>
+                                </div>
+                                <div class="card-body ">
+                                    <p>Força: <span class="fw-semibold">13</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>,
+            <script src="./main.js"></script>
+</body>
+
+</html>
