@@ -64,7 +64,7 @@ Existem dois meios de controlar os niveis dos persnagens, uma dependera do mestr
 
 #### Quantidade de expêriencia necessária para subir de nível
 
-A ideia é que o nível maximo de um personagem seja o 10, pois dificilmente uma jornada iremos ter no final "Abrxus, Mago Negro destruidor de mundos, nível 986" e mesmo que tenhamos, como podemos desafiar ele? Então o limite de nivel foi feito como um modo de facilitar o balanceamento do jogo para o mestre e a criação de desafios, inimigo e NPC, todo mundo sabera o que significa um desafio de nivel 10 ou um de nivel 3, sendo assim para cada nível de personagem temos a seguinte progressão:
+A ideia é que o nível maximo de um personagem seja o 10, pois dificilmente uma jornada iremos ter no final "Abraxus, Mago Negro destruidor de mundos, nível 986" e mesmo que tenhamos, como podemos desafiar ele? Então o limite de nivel foi feito como um modo de facilitar o balanceamento do jogo para o mestre e a criação de desafios, inimigo e NPC, todo mundo sabera o que significa um desafio de nivel 10 ou um de nivel 3, sendo assim para cada nível de personagem temos a seguinte progressão:
 
 - Nível 1 - não se aplica
 - Nível 2 - 50 pontos de experiência(xp)
@@ -81,16 +81,16 @@ A ideia é que o nível maximo de um personagem seja o 10, pois dificilmente uma
 
 O mestre sempre pode decidir quanta experiência um grupo ganha, mas recomendamos os valores a seguir:
 
-Inimigo / Desafio nível 1 - 10 pontos de experiência(xp)
-Inimigo / Desafio nível 2 - 20 pontos de experiência(xp)
-Inimigo / Desafio nível 3 - 30 pontos de experiência(xp)
-Inimigo / Desafio nível 4 - 40 pontos de experiência(xp)
-Inimigo / Desafio nível 5 - 50 pontos de experiência(xp)
-Inimigo / Desafio nível 6 - 60 pontos de experiência(xp)
-Inimigo / Desafio nível 7 - 70 pontos de experiência(xp)
-Inimigo / Desafio nível 8 - 80 pontos de experiência(xp)
-Inimigo / Desafio nível 9 - 90 pontos de experiência(xp)
-Inimigo / Desafio nível 10 - 100 pontos de experiência(xp)
+- Inimigo / Desafio nível 1 - 10 pontos de experiência(xp)
+- Inimigo / Desafio nível 2 - 20 pontos de experiência(xp)
+- Inimigo / Desafio nível 3 - 30 pontos de experiência(xp)
+- Inimigo / Desafio nível 4 - 40 pontos de experiência(xp)
+- Inimigo / Desafio nível 5 - 50 pontos de experiência(xp)
+- Inimigo / Desafio nível 6 - 60 pontos de experiência(xp)
+- Inimigo / Desafio nível 7 - 70 pontos de experiência(xp)
+- Inimigo / Desafio nível 8 - 80 pontos de experiência(xp)
+- Inimigo / Desafio nível 9 - 90 pontos de experiência(xp)
+- Inimigo / Desafio nível 10 - 100 pontos de experiência(xp)
 
 Desta forma a ideia é que para um personagem subir de nivel é preciso derrotar ou ganhar 5 vezes de um inimigo ou desafio de mesmo nivel, ou seja, o paladino nível 3 teria que vencer cinco esqueletos de nível 3 para subir ao nível 4, ou 8 slimes de nivel 2 e se ele for corajoso 3 Orcs de nivel 5. A ideia é que subir de nível seja dificil, e que chegar ao nivel 10 é como uma jornada para chagar ao seu auge. Mas o mestre tem total controle para controlar essa parte se assim desejar.
 
