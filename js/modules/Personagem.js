@@ -9,11 +9,12 @@ class Personagem {
         this.pesoExperiencia = [50, 100, 150, 200, 250, 300, 350, 400, 450]; //Quantidade necessaria para subir de nivel.
         this.dropExperencia = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]; //Quantidade dropada quando derrotado.
         this.atributos = {
-            "forca": { "valor": 0, "peso": 5, "dado": 4 },
-            "destreza": { "valor": 0, "peso": 4, "dado": 6 },
-            "percepcao": { "valor": 0, "peso": 3, "dado": 8 },
-            "carisma": { "valor": 0, "peso": 2, "dado": 10 },
-            "inteligencia": { "valor": 0, "peso": 1, "dado": 12 },
+            "forca": { "valor": 0, "peso": 5, "dado": 4, "valorMaximo": 20 },
+            "destreza": { "valor": 0, "peso": 4, "dado": 6, "valorMaximo": 25 },
+            "percepcao": { "valor": 0, "peso": 3, "dado": 8, "valorMaximo": 33 },
+            "carisma": { "valor": 0, "peso": 2, "dado": 10, "valorMaximo": 50 },
+            "inteligencia": { "valor": 0, "peso": 1, "dado": 12, "valorMaximo": 100 },
+            "sorte": { "valor": 0, "peso": 0, "dado": 20 },
         }
     }
 

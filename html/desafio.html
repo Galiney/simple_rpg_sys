@@ -39,55 +39,50 @@
                 <div class="card-body container">
                     <div class="row">
                         <div class="form-group col">
-                            <label for="personagem1">Personagem</label>
-                            <select class="form-control" id="personagem1" name="Personagem 1">
-                                <option value="opcao1">Opção 1</option>
-                                <option value="opcao2">Opção 2</option>
-                                <option value="opcao3">Opção 3</option>
-                                <option value="opcao4">Opção 4</option>
-                            </select>
+                            <label for="personagem">Personagem</label>
+                            <select class="form-control" id="personagem" name="Personagem"></select>
                         </div>
 
                         <div class="form-group col">
                             <label for="Atributo">Atributo a Comparar</label>
-                            <select class="form-control" id="Atributo" name="Atributo">
-                                <option value="D4">Força</option>
-                                <option value="D6">Destreza</option>
-                                <option value="D8">Percepção</option>
-                                <option value="D12">Inteligencia</option>
-                                <option value="D20">Sorte</option>
+                            <select class="form-control" id="atributo" name="Atributo">
+                                <option value="forca">Força</option>
+                                <option value="destreza">Destreza</option>
+                                <option value="percepcao">Percepção</option>
+                                <option value="carisma">Carisma</option>
+                                <option value="inteligencia">Inteligencia</option>
                             </select>
                         </div>
 
                         <div class="form-group col">
-                            <label for="personagem2">Dificuldade</label>
-                            <select class="form-control" id="personagem2" name="Personagem 2">
-                                <option value=1>1</option>
-                                <option value=2>2</option>
-                                <option value=3>3</option>
-                                <option value=4>4</option>
-                                <option value=5>5</option>
-                                <option value=6>6</option>
-                                <option value=7>7</option>
-                                <option value=8>8</option>
-                                <option value=9>9</option>
-                                <option value=10>10</option>
+                            <label for="NivelDesafio">Dificuldade</label>
+                            <select class="form-control" id="nivelDesafio" name="NivelDesafio">
+                                <option value=1>Nível 1</option>
+                                <option value=2>Nível 2</option>
+                                <option value=3>Nível 3</option>
+                                <option value=4>Nível 4</option>
+                                <option value=5>Nível 5</option>
+                                <option value=6>Nível 6</option>
+                                <option value=7>Nível 7</option>
+                                <option value=8>Nível 8</option>
+                                <option value=9>Nível 9</option>
+                                <option value=10>Nível 10</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="row mt-2">
                         <div class="col">
-                            <div class="card">
+                            <div class="card" id="cardPersonagem">
                                 <div class="card-header">
-                                    <h5 class="card-title">Fulano</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Nível 1</h6>
+                                    <h5 class="card-title"></h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
                                 </div>
-                                <div class="card-body ">
-                                    <p class="mb-1">Força: <span class="fw-semibold">1</span></p>
-                                    <p class="mb-1 ">Destreza: <span class="fw-semibold">1</span></p>
-                                    <p class="mb-1 ">Percepção: <span class="fw-semibold">1</span> </p>
-                                    <p>Inteligência: <span class="fw-semibold">1</span></p>
+                                <div class="card-body">
+                                    <p class="mb-1">Força: <span class="fw-semibold"></span></p>
+                                    <p class="mb-1">Destreza: <span class="fw-semibold"></span></p>
+                                    <p class="mb-1">Percepção: <span class="fw-semibold"></span></p>
+                                    <p class="mb-1">Inteligência: <span class="fw-semibold"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +95,7 @@
                                         <div class="col-5 d-flex justify-content-center">
                                             <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
                                                 style="width: 4rem; height: 4rem;">
-                                                <p class="mb-1 fw-bold fs-4">4</p>
+                                                <p class="mb-1 fw-bold fs-4"><span id="dadoSorte"></p>
                                             </div>
                                         </div>
                                         <div class="col-2 d-flex justify-content-center align-items-center ">
@@ -109,14 +104,14 @@
                                         <div class="col-5 d-flex justify-content-center">
                                             <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
                                                 style="width: 4rem; height: 4rem;">
-                                                <p class="mb-1 fw-bold fs-4">4</p>
+                                                <p class="mb-1 fw-bold fs-4"><span id="dadoAzar"></span></p>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn btn-primary">Rolar</a>
+                                    <a href="#" class="btn btn-primary" id="botaoDesafio">Rolar</a>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="m-0">Resultado: <span class="fw-semibold">0</span></p>
+                                    <p class="m-0">Resultado: <span class="fw-semibold" id="resultado"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -124,11 +119,13 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title">Dificuldade</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Nível 8</h6>
+                                    <h5 class="card-title" id="cardDesafio">Desafio</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Desafio nível: <span
+                                            class="fw-semibold" id="nivelEscolhido">0</span></h6>
                                 </div>
                                 <div class="card-body ">
-                                    <p>Força: <span class="fw-semibold">13</span></p>
+                                    <p id="atributoEscolhido">Dificuldade: <span class="fw-semibold"
+                                            id="dificuldade"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -136,11 +133,16 @@
 
                 </div>
             </div>
+        </div>
+    </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-                crossorigin="anonymous"></script>,
-            <script src="./main.js"></script>
+                crossorigin="anonymous"></script>
+            <script src="../js/modules/Action.js"></script>
+            <script src="../js/modules/interface.js"></script>
+            <script src="../js/modules/Personagem.js"></script>
+            <script src="../js/scripts/desafio.js"></script>
 </body>
 
 </html>

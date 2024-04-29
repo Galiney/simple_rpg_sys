@@ -35,7 +35,7 @@ function preencherSelect(idSelect, idCard) {
     let select = document.getElementById(idSelect);
 
     // Limpa as opções antes de preencher
-    select.innerHTML = ''; 
+    select.innerHTML = '';
 
     personagens.forEach(personagem => {
         let option = document.createElement('option');
@@ -44,14 +44,16 @@ function preencherSelect(idSelect, idCard) {
         select.add(option);
     });
 
-    preencherCard(idCard, select.value, personagens);
-    // Adiciona um evento de mudança ao seletor
-    select.addEventListener('change', () => {
-        preencherCard(idCard, select.value, personagens);
-    });
+    if (idCard != null) {
+        preencherCardPersonagem(idCard, select.value, personagens);
+        // Adiciona um evento de mudança ao seletor
+        select.addEventListener('change', () => {
+            preencherCardPersonagem(idCard, select.value, personagens);
+        });
+    }
 }
 
-function preencherCard(idCard, nomePersonagem, personagens) {
+function preencherCardPersonagem(idCard, nomePersonagem, personagens) {
     let cardTitle = document.querySelector(`#${idCard} .card-title`);
     let cardNivel = document.querySelector(`#${idCard} .card-subtitle`);
     let cardAtributos = document.querySelector(`#${idCard} .card-body`);

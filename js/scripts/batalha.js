@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let inimigo = new Personagem(inimigoArmazenado.nome, inimigoArmazenado.nivel, inimigoArmazenado.alinhamento);
 
 
-        let atributoSelecionado = document.getElementById('atributo').value; 
+        let atributoSelecionado = document.getElementById('atributo').value;
         let dado = aliado.selecionarDado(atributoSelecionado);
 
-        let action = new Action(dado ,atributoSelecionado, aliado, inimigo);
+        let action = new Action(dado, atributoSelecionado, aliado, inimigo);
 
         let resultado = action.batalha();
 
