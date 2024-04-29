@@ -37,3 +37,4 @@ class Action {
         let resto = resultado(this.dadoAliado, this.dadoInimigo); //esquerda sempre é quem rola, direita é a má sorte.
         this.resultado("sorte", resto);
     }
+}
