@@ -5,6 +5,16 @@ function inserirPersonagem(personagem) {
     listarPersonagens();
 }
 
+function deletarPersonagem(index) {
+    // Remove o personagem do localStorage
+    let personagens = JSON.parse(localStorage.getItem('personagens')) || [];
+    personagens.splice(index, 1);
+    localStorage.setItem('personagens', JSON.stringify(personagens));
+
+    // Atualiza a lista de personagens
+    listarPersonagens();
+}
+
 function listarPersonagens() {
     let personagens = JSON.parse(localStorage.getItem('personagens')) || [];
     let listContainer = document.getElementById('personagens-list');
@@ -19,26 +29,51 @@ function listarPersonagens() {
     });
 }
 
-function preencherSelect() {
+function preencherSelect(idSelect, idCard) {
     let personagens = JSON.parse(localStorage.getItem('personagens')) || [];
 
-    let select = document.getElementById('personagem');
-    select.innerHTML = ''; // Limpa as opções antes de preencher
+    let select = document.getElementById(idSelect);
+
+    // Limpa as opções antes de preencher
+    select.innerHTML = ''; 
 
     personagens.forEach(personagem => {
         let option = document.createElement('option');
-        option.text = personagem.nome; // Use o nome do personagem como texto da opção
-        option.value = personagem.nome; // Você pode definir outro valor se necessário
+        option.text = personagem.nome;
+        option.value = personagem.nome;
         select.add(option);
+    });
+
+    preencherCard(idCard, select.value, personagens);
+    // Adiciona um evento de mudança ao seletor
+    select.addEventListener('change', () => {
+        preencherCard(idCard, select.value, personagens);
     });
 }
 
-function deletarPersonagem(index) {
-    // Remove o personagem do localStorage
-    let personagens = JSON.parse(localStorage.getItem('personagens')) || [];
-    personagens.splice(index, 1);
-    localStorage.setItem('personagens', JSON.stringify(personagens));
+function preencherCard(idCard, nomePersonagem, personagens) {
+    let cardTitle = document.querySelector(`#${idCard} .card-title`);
+    let cardNivel = document.querySelector(`#${idCard} .card-subtitle`);
+    let cardAtributos = document.querySelector(`#${idCard} .card-body`);
 
-    // Atualiza a lista de personagens
-    listarPersonagens();
+    let personagemSelecionado = personagens.find(personagem => personagem.nome === nomePersonagem);
+    if (personagemSelecionado) {
+        cardTitle.textContent = personagemSelecionado.nome;
+        cardNivel.textContent = `Nível ${personagemSelecionado.nivel}`;
+
+        // Limpa os atributos do card
+        cardAtributos.innerHTML = '';
+
+        // Preenche os atributos do personagem no card
+        Object.entries(personagemSelecionado.atributos).forEach(([atributo, info]) => {
+            let p = document.createElement('p');
+            p.classList.add('mb-1');
+            p.textContent = `${atributo.charAt(0).toUpperCase() + atributo.slice(1)}: `;
+            let span = document.createElement('span');
+            span.classList.add('fw-semibold');
+            span.textContent = info.valor;
+            p.appendChild(span);
+            cardAtributos.appendChild(p);
+        });
+    }
 }
