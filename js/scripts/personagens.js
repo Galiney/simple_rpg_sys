@@ -4,8 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Obtém os valores dos campos do formulário
         var nome = document.getElementById('nome').value;
-        var nivel = document.getElementById('nivel').value;
         var alinhamento = document.getElementById('alinhamento').value;
+        var radioButtons = document.querySelectorAll('input[name="btnradio"]');
+        var nivel
+
+        radioButtons.forEach(function(button) {
+            // Verifica o botão selecionado
+            if (button.checked) {
+                nivel = button.value;
+            }
+        });
 
         // Cria um novo personagem
         var novoPersonagem = new Personagem(nome, nivel, alinhamento);
