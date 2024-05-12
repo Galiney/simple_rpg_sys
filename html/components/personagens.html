@@ -1,0 +1,91 @@
+<div class="w-100 h-75 justify-content-center align-items-center d-flex">
+  <div class="card w-75">
+    <h5 class="card-header">Personagens</h5>
+    <ul id="personagens-list" class="list-group mt-3"></ul>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      Criar Novo Personagem
+    </div>
+    <div class="card-body">
+      <form id="formularioPersonagem">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="nivel">Nível:</label>
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">1</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">2</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" value="3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">3</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" value="4" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio4">4</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" value="5" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio5">5</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio6" value="6" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio6">6</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio7" value="7" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio7">7</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio8" value="8" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio8">8</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio9" value="9" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio9">9</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio10" value="10" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio10">10</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="alinhamento">Alinhamento:</label>
+          <input type="text" class="form-control" id="alinhamento" name="alinhamento" required>
+        </div>
+        <div class="card" id="cardAtributos">
+          <div class="card-header">
+            <h5 class="card-title">Distribua os Pontos de atributo</h5>
+          </div>
+          <div class="card-body">
+            <p class="mb-1">Força: <span class="fw-semibold"></span><button type="button"
+                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
+                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
+                style="font-size: x-small;">-</button></p>
+            <p class="mb-1">Destreza: <span class="fw-semibold"></span><button type="button"
+                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
+                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
+                style="font-size: x-small;">-</button></p>
+            <p class="mb-1">Percepção: <span class="fw-semibold"></span><button type="button"
+                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
+                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
+                style="font-size: x-small;">-</button></p>
+            <p class="mb-1">Carisma: <span class="fw-semibold"></span><button type="button"
+                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
+                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
+                style="font-size: x-small;">-</button></p>
+            <p class="mb-1">Inteligência: <span class="fw-semibold"></span><button type="button"
+                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
+                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
+                style="font-size: x-small;">-</button></p>
+          </div>
+          <div class="card-footer">
+            <p class="mb-1">Pontos do Nível: <span class="fw-semibold"></span></p>
+            <p class="mb-1">Pontos Restantes: <span class="fw-semibold"></span></p>
+          </div>
+        </div>
+        <!-- Adicione mais campos para outros atributos do personagem, se necessário -->
+
+        <button type="submit" class="btn btn-primary">Criar Personagem</button>
+      </form>
+    </div>
+  </div>
+</div>

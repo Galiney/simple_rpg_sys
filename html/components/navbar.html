@@ -1,22 +1,22 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
-    <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" id="logo">Simple por Galiney</a>
-        <div class="collapse navbar-collapse" id="opcaoNavbar">
-            <div class="navbar-nav d-flex">
-                <a class="nav-link" href="../instrucoes.html">Instruções</a>
-                <a class="nav-link" href="../batalha.html">Batalha</a>
-                <a class="nav-link" href="../desafio.html">Desafio</a>
-                <a class="nav-link" href="../sorte.html">Sorte</a>
-                <a class="nav-link" href="../personagens.html">Personagens</a>
-            </div>
-        </div>
-        <form class="d-flex">
-            <input class="form-control-sm mx-1" type="email" placeholder="email" aria-label="email" id="campoEmail">
-            <input class="form-control-sm mx-1" type="senha" placeholder="senha" aria-label="senha" id="campoSenha">
-            <button class="btn btn-outline-success mx-1 my-2 my-sm-0" type="submit" id="botaoEntrar">Entrar</button>
-            <button class="btn btn-outline-info mx-1 my-2 my-sm-0" type="submit" id="botaoRegistrar">Registrar</button>
-        </form>
+<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-secondary text-white" id="navbar">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="#" id="logo">Simple por Galiney</a>
+      <div id="navbarNav">
+        <div class="d-flex flex-row">
+          <button id="linkInstrucoes" class="btn me-3">Instruções</button>
+          <button id="linkBatalha" class="btn me-3">Batalha</button>
+          <button id="linkDesafio" class="btn me-3">Desafio</button>
+          <button id="linkSorte" class="btn me-3">Sorte</button>
+          <button id="linkPersonagens" class="btn me-3">Personagens</button>
+        </div>        
+      </div>      
     </div>
+    <form class="d-flex align-items-center" style="max-width: 565px; min-width: 565px;">
+      <input class="form-control me-2" type="email" placeholder="Email" aria-label="Email" id="campoEmail">
+      <input class="form-control me-2" type="password" placeholder="Senha" aria-label="Senha" id="campoSenha">
+      <button class="btn btn-success me-2" type="submit" id="botaoEntrar">Entrar</button>
+      <button class="btn btn-info" type="submit" id="botaoRegistrar">Registrar</button>
+    </form>
+  </div>
 </nav>
-
-<script src="../../js/scripts/navbar.js"></script>
