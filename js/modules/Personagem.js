@@ -28,11 +28,28 @@ class Personagem {
     }
 
     calcularPontos() {
+        let pontosAtributos = 0;
+        
+        for (const atributo in this.atributos) {
+            pontosAtributos += this.atributos[atributo].valor * this.atributos[atributo].peso;
+        }
+
+        return this.calcularPontosNivel() - pontosAtributos;
+    }
+
+    calcularPontosNivel() {
         let pontos = 0;
         for (let i = 0; i < this.nivel; i++) {
             pontos += this.pesoNiveis[i];
         }
         return pontos;
+    }
+
+    resetarAtributos() {
+        Object.keys(this.atributos).forEach(atributo => {
+            this.atributos[atributo].valor = 0;
+        });
+        this.pontoAtributos = this.calcularPontos();
     }
 
     aumentarPonto(atributo) {
@@ -43,9 +60,30 @@ class Personagem {
         this.atributos[atributo].valor++;
     }
 
+    diminuirPonto(atributo) {
+        if (this.atributos[atributo].valor <= 0) {
+            return
+        }
+        this.pontoAtributos += this.atributos[atributo].peso;
+        this.atributos[atributo].valor--;
+    }
+
     subirNivel() {
         this.nivel++;
         var i = this.nivel;
         this.pontoAtributos += this.pesoNiveis[i - 1];
+    }
+
+    setNome(nome) {
+        this.nome = nome;
+    }
+
+    setAlinhamento(alinhamento) {
+        this.alinhamento = alinhamento;
+    }
+
+    setNivel(nivel) {
+        this.nivel = nivel;
+        this.pontoAtributos = this.calcularPontos();
     }
 };

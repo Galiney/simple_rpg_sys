@@ -95,40 +95,100 @@
                             <label for="alinhamento">Alinhamento:</label>
                             <input type="text" class="form-control" id="alinhamento" name="alinhamento" required>
                         </div>
-                        <div class="card" id="cardAtributos">
+                        <div class="card" id="cardAtributos" style="margin-block: 5%;">
                             <div class="card-header">
                                 <h5 class="card-title">Distribua os Pontos de atributo</h5>
                             </div>
                             <div class="card-body">
-                                <p class="mb-1">Força: <span class="fw-semibold"></span><button type="button"
-                                        class="btn btn-outline-success btn-sm rounded-circle text"
-                                        style="font-size: x-small;">+</button><button type="button"
-                                        class="btn btn-outline-danger btn-sm rounded-circle text"
-                                        style="font-size: x-small;">-</button></p>
-                                <p class="mb-1">Destreza: <span class="fw-semibold"></span><button type="button"
-                                        class="btn btn-outline-success btn-sm rounded-circle text"
-                                        style="font-size: x-small;">+</button><button type="button"
-                                        class="btn btn-outline-danger btn-sm rounded-circle text"
-                                        style="font-size: x-small;">-</button></p>
-                                <p class="mb-1">Percepção: <span class="fw-semibold"></span><button type="button"
-                                        class="btn btn-outline-success btn-sm rounded-circle text"
-                                        style="font-size: x-small;">+</button><button type="button"
-                                        class="btn btn-outline-danger btn-sm rounded-circle text"
-                                        style="font-size: x-small;">-</button></p>
-                                <p class="mb-1">Carisma: <span class="fw-semibold"></span><button type="button"
-                                        class="btn btn-outline-success btn-sm rounded-circle text"
-                                        style="font-size: x-small;">+</button><button type="button"
-                                        class="btn btn-outline-danger btn-sm rounded-circle text"
-                                        style="font-size: x-small;">-</button></p>
-                                <p class="mb-1">Inteligência: <span class="fw-semibold"></span><button type="button"
-                                        class="btn btn-outline-success btn-sm rounded-circle text"
-                                        style="font-size: x-small;">+</button><button type="button"
-                                        class="btn btn-outline-danger btn-sm rounded-circle text"
-                                        style="font-size: x-small;">-</button></p>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="d-flex align-items-center">
+                                            <p class="mb-1 mr-2">Força (Custo 5): <span class="fw-semibold" id="spanForca">0</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="d-flex align-items-center justify-content-end">
+                                            <button type="button" id="somaForca"
+                                                class="btn btn-outline-success btn-sm rounded-circle text"
+                                                style="font-size: x-small;">+</button>
+                                            <button type="button" id="subtraiForca"
+                                                class="btn btn-outline-danger btn-sm rounded-circle text"
+                                                style="font-size: x-small;">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="d-flex align-items-center">
+                                            <p class="mb-1 mr-2">Destreza (Custo 4): <span class="fw-semibold" id="spanDestreza">0</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="d-flex align-items-center justify-content-end">
+                                            <button type="button" id="somaDestreza"
+                                                class="btn btn-outline-success btn-sm rounded-circle text"
+                                                style="font-size: x-small;">+</button>
+                                            <button type="button" id="subtraiDestreza"
+                                                class="btn btn-outline-danger btn-sm rounded-circle text"
+                                                style="font-size: x-small;">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="d-flex align-items-center">
+                                            <p class="mb-1 mr-2">Percepção (Custo 3): <span class="fw-semibold" id="spanPercepcao">0</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="d-flex align-items-center justify-content-end">
+                                            <button type="button" id="somaPercepcao"
+                                                class="btn btn-outline-success btn-sm rounded-circle text"
+                                                style="font-size: x-small;">+</button>
+                                            <button type="button" id="subtraiPercepcao"
+                                                class="btn btn-outline-danger btn-sm rounded-circle text"
+                                                style="font-size: x-small;">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="d-flex align-items-center">
+                                            <p class="mb-1 mr-2">Carisma (Custo 2): <span class="fw-semibold" id="spanCarisma">0</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="d-flex align-items-center justify-content-end">
+                                            <button type="button" id="somaCarisma"
+                                                class="btn btn-outline-success btn-sm rounded-circle text"
+                                                style="font-size: x-small;">+</button>
+                                            <button type="button" id="subtraiCarisma"
+                                                class="btn btn-outline-danger btn-sm rounded-circle text"
+                                                style="font-size: x-small;">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="d-flex align-items-center">
+                                            <p class="mb-1 mr-2">Inteligência (Custo 1): <span class="fw-semibold" id="spanInteligencia">0</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="d-flex align-items-center justify-content-end">
+                                            <button type="button" id="somaInteligencia"
+                                                class="btn btn-outline-success btn-sm rounded-circle text"
+                                                style="font-size: x-small;">+</button>
+                                            <button type="button" id="subtraiInteligencia"
+                                                class="btn btn-outline-danger btn-sm rounded-circle text"
+                                                style="font-size: x-small;">-</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-footer">
-                                <p class="mb-1">Pontos do Nível: <span class="fw-semibold"></span></p>
-                                <p class="mb-1">Pontos Restantes: <span class="fw-semibold"></span></p>
+                                <p class="mb-1">Pontos do Nível: <span class="fw-semibold" id="spanPontosNivel">24</span></p>
+                                <p class="mb-1">Pontos Restantes: <span class="fw-semibold" id="spanPontosRestantes">24</span></p>
                             </div>
                         </div>
                         <!-- Adicione mais campos para outros atributos do personagem, se necessário -->
