@@ -1,98 +1,96 @@
-<div class="vh-100">
-  <div class="w-100 h-75 justify-content-center align-items-center d-flex">
-    <div class="card w-75">
-      <h5 class="card-header">Desafio</h5>
-      <div class="card-body container">
-        <div class="row">
-          <div class="form-group col">
-            <label for="personagem">Personagem</label>
-            <select class="form-control" id="personagem" name="Personagem"></select>
-          </div>
+<div class="w-100 h-75 justify-content-center d-flex">
+  <div class="card w-75">
+    <h5 class="card-header">Desafio</h5>
+    <div class="card-body container">
+      <div class="row">
+        <div class="form-group col">
+          <label for="personagem">Personagem</label>
+          <select class="form-control" id="personagem" name="Personagem"></select>
+        </div>
 
-          <div class="form-group col">
-            <label for="Atributo">Atributo a Comparar</label>
-            <select class="form-control" id="atributo" name="Atributo">
-              <option value="forca">Força</option>
-              <option value="destreza">Destreza</option>
-              <option value="percepcao">Percepção</option>
-              <option value="carisma">Carisma</option>
-              <option value="inteligencia">Inteligencia</option>
-            </select>
-          </div>
+        <div class="form-group col">
+          <label for="Atributo">Atributo a Comparar</label>
+          <select class="form-control" id="atributo" name="Atributo">
+            <option value="forca">Força</option>
+            <option value="destreza">Destreza</option>
+            <option value="percepcao">Percepção</option>
+            <option value="carisma">Carisma</option>
+            <option value="inteligencia">Inteligencia</option>
+          </select>
+        </div>
 
-          <div class="form-group col">
-            <label for="NivelDesafio">Dificuldade</label>
-            <select class="form-control" id="nivelDesafio" name="NivelDesafio">
-              <option value=1>Nível 1</option>
-              <option value=2>Nível 2</option>
-              <option value=3>Nível 3</option>
-              <option value=4>Nível 4</option>
-              <option value=5>Nível 5</option>
-              <option value=6>Nível 6</option>
-              <option value=7>Nível 7</option>
-              <option value=8>Nível 8</option>
-              <option value=9>Nível 9</option>
-              <option value=10>Nível 10</option>
-            </select>
+        <div class="form-group col">
+          <label for="NivelDesafio">Dificuldade</label>
+          <select class="form-control" id="nivelDesafio" name="NivelDesafio">
+            <option value=1>Nível 1</option>
+            <option value=2>Nível 2</option>
+            <option value=3>Nível 3</option>
+            <option value=4>Nível 4</option>
+            <option value=5>Nível 5</option>
+            <option value=6>Nível 6</option>
+            <option value=7>Nível 7</option>
+            <option value=8>Nível 8</option>
+            <option value=9>Nível 9</option>
+            <option value=10>Nível 10</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col">
+          <div class="card" id="cardPersonagem">
+            <div class="card-header">
+              <h5 class="card-title"></h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+            </div>
+            <div class="card-body">
+              <p class="mb-1">Força: <span class="fw-semibold"></span></p>
+              <p class="mb-1">Destreza: <span class="fw-semibold"></span></p>
+              <p class="mb-1">Percepção: <span class="fw-semibold"></span></p>
+              <p class="mb-1">Carisma: <span class="fw-semibold"></span></p>
+              <p class="mb-1">Inteligência: <span class="fw-semibold"></span></p>
+            </div>
           </div>
         </div>
 
-        <div class="row mt-2">
-          <div class="col">
-            <div class="card" id="cardPersonagem">
-              <div class="card-header">
-                <h5 class="card-title"></h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-              </div>
-              <div class="card-body">
-                <p class="mb-1">Força: <span class="fw-semibold"></span></p>
-                <p class="mb-1">Destreza: <span class="fw-semibold"></span></p>
-                <p class="mb-1">Percepção: <span class="fw-semibold"></span></p>
-                <p class="mb-1">Carisma: <span class="fw-semibold"></span></p>
-                <p class="mb-1">Inteligência: <span class="fw-semibold"></span></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">Rolagem dos Dados</h5>
-                <div class="row mt-4">
-                  <div class="col-5 d-flex justify-content-center">
-                    <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
-                      style="width: 4rem; height: 4rem;">
-                      <p class="mb-1 fw-bold fs-4"><span id="dadoSorte"></p>
-                    </div>
-                  </div>
-                  <div class="col-2 d-flex justify-content-center align-items-center ">
-                    <p class="fs-1">X</p>
-                  </div>
-                  <div class="col-5 d-flex justify-content-center">
-                    <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
-                      style="width: 4rem; height: 4rem;">
-                      <p class="mb-1 fw-bold fs-4"><span id="dadoAzar"></span></p>
-                    </div>
+        <div class="col">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Rolagem dos Dados</h5>
+              <div class="row mt-4">
+                <div class="col-5 d-flex justify-content-center">
+                  <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
+                    style="width: 4rem; height: 4rem;">
+                    <p class="mb-1 fw-bold fs-4"><span id="dadoSorte"></p>
                   </div>
                 </div>
-                <a href="#" class="btn btn-primary" id="botaoDesafio">Rolar</a>
+                <div class="col-2 d-flex justify-content-center align-items-center ">
+                  <p class="fs-1">X</p>
+                </div>
+                <div class="col-5 d-flex justify-content-center">
+                  <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
+                    style="width: 4rem; height: 4rem;">
+                    <p class="mb-1 fw-bold fs-4"><span id="dadoAzar"></span></p>
+                  </div>
+                </div>
               </div>
-              <div class="card-footer">
-                <p class="m-0">Resultado: <span class="fw-semibold" id="resultado"></span></p>
-              </div>
+              <a href="#" class="btn btn-primary" id="botaoDesafio">Rolar</a>
+            </div>
+            <div class="card-footer">
+              <p class="m-0">Resultado: <span class="fw-semibold" id="resultado"></span></p>
             </div>
           </div>
+        </div>
 
-          <div class="col">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title" id="cardDesafio">Desafio</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Desafio nível: <span class="fw-semibold"
-                    id="nivelEscolhido">0</span></h6>
-              </div>
-              <div class="card-body ">
-                <p id="atributoEscolhido">Dificuldade: <span class="fw-semibold" id="dificuldade"></span></p>
-              </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title" id="cardDesafio">Desafio</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Desafio nível: <span class="fw-semibold"
+                  id="nivelEscolhido">0</span></h6>
+            </div>
+            <div class="card-body ">
+              <p id="atributoEscolhido">Dificuldade: <span class="fw-semibold" id="dificuldade"></span></p>
             </div>
           </div>
         </div>

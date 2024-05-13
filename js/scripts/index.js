@@ -15,13 +15,7 @@ function loadComponent(url) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var navbarUrl = "../html/components/navbar.html";
-  var batalhaUrl = "../../html/components/batalha.html";
-  var desafioUrl = "../../html/components/desafio.html";
-  var sorteUrl = "../../html/components/sorte.html";
-  var personagensUrl = "../../html/components/personagens.html";
-
-  fetch(navbarUrl)
+  fetch("../html/components/navbar.html")
     .then(response => {
       if (!response.ok) {
         throw new Error('Erro ao carregar o navbar');

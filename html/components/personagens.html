@@ -1,9 +1,9 @@
-<div class="w-100 h-75 justify-content-center align-items-center d-flex">
-  <div class="card w-75">
+<div class="w-100 h-75 justify-content-center d-flex">
+  <div class="card w-25">
     <h5 class="card-header">Personagens</h5>
     <ul id="personagens-list" class="list-group mt-3"></ul>
   </div>
-  <div class="card">
+  <div class="card mt-auto">
     <div class="card-header">
       Criar Novo Personagem
     </div>
@@ -56,30 +56,65 @@
             <h5 class="card-title">Distribua os Pontos de atributo</h5>
           </div>
           <div class="card-body">
-            <p class="mb-1">Força: <span class="fw-semibold"></span><button type="button"
-                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
-                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
-                style="font-size: x-small;">-</button></p>
-            <p class="mb-1">Destreza: <span class="fw-semibold"></span><button type="button"
-                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
-                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
-                style="font-size: x-small;">-</button></p>
-            <p class="mb-1">Percepção: <span class="fw-semibold"></span><button type="button"
-                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
-                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
-                style="font-size: x-small;">-</button></p>
-            <p class="mb-1">Carisma: <span class="fw-semibold"></span><button type="button"
-                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
-                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
-                style="font-size: x-small;">-</button></p>
-            <p class="mb-1">Inteligência: <span class="fw-semibold"></span><button type="button"
-                class="btn btn-outline-success btn-sm rounded-circle text" style="font-size: x-small;">+</button><button
-                type="button" class="btn btn-outline-danger btn-sm rounded-circle text"
-                style="font-size: x-small;">-</button></p>
+            <div class="card w-90 m-0 mt-3">
+              <div class="card-header pt-0 pb-0">
+                <p class="mb-1 fw-semibold text-center">Força: <span class="fw-semibold"></span></p>
+              </div>
+              <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                    class="fw-semibold">0</span></button>
+                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+              </div>
+            </div>
+            <div class="card w-90 m-0 mt-3">
+              <div class="card-header pt-0 pb-0">
+                <p class="mb-1 fw-semibold text-center">Destreza: <span class="fw-semibold"></span></p>
+              </div>
+              <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                    class="fw-semibold">0</span></button>
+                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+              </div>
+            </div>
+            <div class="card w-90 m-0 mt-3">
+              <div class="card-header pt-0 pb-0">
+                <p class="mb-1 fw-semibold text-center">Percepção: <span class="fw-semibold"></span></p>
+              </div>
+              <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                    class="fw-semibold">0</span></button>
+                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+              </div>
+            </div>
+            <div class="card w-90 m-0 mt-3">
+              <div class="card-header pt-0 pb-0">
+                <p class="mb-1 fw-semibold text-center">Carisma: <span class="fw-semibold"></span></p>
+              </div>
+              <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                    class="fw-semibold">0</span></button>
+                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+              </div>
+            </div>
+            <div class="card w-90 m-0 mt-3">
+              <div class="card-header pt-0 pb-0">
+                <p class="mb-1 fw-semibold text-center">Inteligência: <span class="fw-semibold"></span></p>
+              </div>
+              <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                    class="fw-semibold">0</span></button>
+                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+              </div>
+            </div>
           </div>
           <div class="card-footer">
-            <p class="mb-1">Pontos do Nível: <span class="fw-semibold"></span></p>
-            <p class="mb-1">Pontos Restantes: <span class="fw-semibold"></span></p>
+            <p class="mb-1 fw-semibold">Pontos do Nível: <span class="fw-bold"></span></p>
+            <p class="mb-1 fw-semibold">Pontos Restantes: <span class="fw-bold"></span></p>
           </div>
         </div>
         <!-- Adicione mais campos para outros atributos do personagem, se necessário -->
