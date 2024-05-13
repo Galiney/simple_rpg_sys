@@ -4,122 +4,120 @@
     <ul id="personagens-list" class="list-group mt-3"></ul>
   </div>
   <div class="card mt-auto">
-    <div class="card-header">
-      Criar Novo Personagem
-    </div>
+    <h5 class="card-header">Criar Novo Personagem</h5>
     <div class="card-body">
       <form id="formularioPersonagem">
         <div class="form-group">
           <label for="nome">Nome:</label>
           <input type="text" class="form-control" id="nome" name="nome" required>
         </div>
-        <div class="form-group">
+        <div class="form-group mt-3">
           <label for="nivel">Nível:</label>
           <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="1" autocomplete="off" checked>
+            <input type="radio" class="btn-check" name="nivel" id="btnradio1" value="1" autocomplete="off" checked>
             <label class="btn btn-outline-primary" for="btnradio1">1</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="2" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio2" value="2" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio2">2</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" value="3" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio3" value="3" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio3">3</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" value="4" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio4" value="4" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio4">4</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" value="5" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio5" value="5" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio5">5</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio6" value="6" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio6" value="6" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio6">6</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio7" value="7" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio7" value="7" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio7">7</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio8" value="8" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio8" value="8" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio8">8</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio9" value="9" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio9" value="9" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio9">9</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio10" value="10" autocomplete="off">
+            <input type="radio" class="btn-check" name="nivel" id="btnradio10" value="10" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio10">10</label>
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group mt-3">
           <label for="alinhamento">Alinhamento:</label>
           <input type="text" class="form-control" id="alinhamento" name="alinhamento" required>
         </div>
-        <div class="card" id="cardAtributos">
+        <div class="card mt-3" id="cardAtributos">
           <div class="card-header">
             <h5 class="card-title">Distribua os Pontos de atributo</h5>
           </div>
           <div class="card-body">
-            <div class="card w-90 m-0 mt-3">
+            <div class="card w-90 m-0">
               <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Força: <span class="fw-semibold"></span></p>
+                <p class="mb-1 fw-semibold text-center">Força:</p>
               </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                <button id="somaForca" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanForca"
                     class="fw-semibold">0</span></button>
-                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="subtraiForca" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
               <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Destreza: <span class="fw-semibold"></span></p>
+                <p class="mb-1 fw-semibold text-center">Destreza:</p>
               </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                <button id="somaDestreza" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanDestreza"
                     class="fw-semibold">0</span></button>
-                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="subtraiDestreza" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
               <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Percepção: <span class="fw-semibold"></span></p>
+                <p class="mb-1 fw-semibold text-center">Percepção:</p>
               </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                <button id="somaPercepcao" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanPercepcao"
                     class="fw-semibold">0</span></button>
-                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="subtraiPercepcao" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
               <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Carisma: <span class="fw-semibold"></span></p>
+                <p class="mb-1 fw-semibold text-center">Carisma:</p>
               </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                <button id="somaCarisma" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanCarisma"
                     class="fw-semibold">0</span></button>
-                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="subtraiCarisma" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
               <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Inteligência: <span class="fw-semibold"></span></p>
+                <p class="mb-1 fw-semibold text-center">Inteligência:</p>
               </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0"><span
+                <button id="somaInteligencia" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanInteligencia"
                     class="fw-semibold">0</span></button>
-                <button type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="subtraiInteligencia" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
               </div>
             </div>
           </div>
           <div class="card-footer">
-            <p class="mb-1 fw-semibold">Pontos do Nível: <span class="fw-bold"></span></p>
-            <p class="mb-1 fw-semibold">Pontos Restantes: <span class="fw-bold"></span></p>
+            <p class="mb-1 fw-semibold">Pontos do Nível: <span id="spanPontosNivel" class="fw-bold"></span></p>
+            <p class="mb-1 fw-semibold">Pontos Restantes: <span id="spanPontosRestantes" class="fw-bold"></span></p>
           </div>
         </div>
         <!-- Adicione mais campos para outros atributos do personagem, se necessário -->
 
-        <button type="submit" class="btn btn-primary">Criar Personagem</button>
+        <button type="submit" class="btn btn-primary mt-3">Criar Personagem</button>
       </form>
     </div>
   </div>
