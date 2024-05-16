@@ -1,102 +1,124 @@
-document.addEventListener('DOMContentLoaded', function () {
+  // Seleciona os botões de soma e subtração para cada atributo
+  const btnSomaForca = document.getElementById('somaForca');
+  const btnSubtraiForca = document.getElementById('subtraiForca');
+  const btnSomaDestreza = document.getElementById('somaDestreza');
+  const btnSubtraiDestreza = document.getElementById('subtraiDestreza');
+  const btnSomaPercepcao = document.getElementById('somaPercepcao');
+  const btnSubtraiPercepcao = document.getElementById('subtraiPercepcao');
+  const btnSomaCarisma = document.getElementById('somaCarisma');
+  const btnSubtraiCarisma = document.getElementById('subtraiCarisma');
+  const btnSomaInteligencia = document.getElementById('somaInteligencia');
+  const btnSubtraiInteligencia = document.getElementById('subtraiInteligencia');
   const personagem = new Personagem(); // Instancia um novo Personagem
+  atualizarValores();
+
   // Função para atualizar os valores exibidos na página
   function atualizarValores() {
-    // Atualiza os valores dos spans com os valores dos atributos do personagem
-    document.getElementById('spanForca').textContent = personagem.atributos.forca.valor;
-    document.getElementById('spanDestreza').textContent = personagem.atributos.destreza.valor;
-    document.getElementById('spanPercepcao').textContent = personagem.atributos.percepcao.valor;
-    document.getElementById('spanCarisma').textContent = personagem.atributos.carisma.valor;
-    document.getElementById('spanInteligencia').textContent = personagem.atributos.inteligencia.valor;
-    document.getElementById('spanPontosNivel').textContent = personagem.calcularPontosNivel(); // Calcula os pontos do nível
-    document.getElementById('spanPontosRestantes').textContent = personagem.pontoAtributos; // Obtém os pontos restantes do personagem
+      // Atualiza os valores dos spans com os valores dos atributos do personagem
+      document.getElementById('spanForca').textContent = personagem.atributos.forca.valor;
+      document.getElementById('spanDestreza').textContent = personagem.atributos.destreza.valor;
+      document.getElementById('spanPercepcao').textContent = personagem.atributos.percepcao.valor;
+      document.getElementById('spanCarisma').textContent = personagem.atributos.carisma.valor;
+      document.getElementById('spanInteligencia').textContent = personagem.atributos.inteligencia.valor;
+      document.getElementById('spanPontosNivel').textContent = personagem.calcularPontosNivel(); // Calcula os pontos do nível
+      document.getElementById('spanPontosRestantes').textContent = personagem.pontoAtributos; // Obtém os pontos restantes do personagem
   }
 
-  // Evento de submissão do formulário
-  document.getElementById('formularioPersonagem').addEventListener('submit', function (event) {
-    event.preventDefault(); // Impede o envio do formulário padrão
+  function handleNivelChange() {
+      // Seleciona todos os botões de nível
+      const radioButtons = document.querySelectorAll('input[name="nivel"]');
 
-    // Obtém os valores dos campos do formulário
-    const nome = document.getElementById('nome').value;
-    const alinhamento = document.getElementById('alinhamento').value;
+      // Percorre todos os botões de nível
+      radioButtons.forEach(function (button) {
+          // Verifica se o botão está selecionado
+          if (button.checked) {
+              // Atualiza o nível do personagem
+              personagem.setNivel(button.value);
+              personagem.resetarAtributos();
 
-    personagem.setNome(nome);
-    personagem.setAlinhamento(alinhamento);
-
-    // Insere o novo personagem na lista
-    inserirPersonagem(personagem);
-
-    // Limpa os campos do formulário
-    document.getElementById('nome').value = '';
-    document.getElementById('alinhamento').value = '';
-
-    // Feedback ao usuário (opcional)
-    alert('Personagem criado com sucesso!');
-  });
-
-  // Listar personagens após o carregamento completo da página
-  listarPersonagens();
-
-  // Funções para manipular o nível do personagem
-  function handleNivelChange(event) {
-    const nivelSelecionado = event.target.value;
-    personagem.setNivel(nivelSelecionado);
-    personagem.resetarAtributos();
-    atualizarValores();
+              // Atualiza os valores na página
+              atualizarValores();
+          }
+      });
   }
 
   const radioButtons = document.querySelectorAll('input[name="nivel"]');
   radioButtons.forEach(function (button) {
-    button.addEventListener('change', handleNivelChange);
+      button.addEventListener('change', handleNivelChange);
   });
 
-  // Funções para manipular os pontos de atributo
-  function handleAtributoChange(atributo, operacao) {
-    if (operacao === 'aumentar') {
-      personagem.aumentarPonto(atributo);
-    } else if (operacao === 'diminuir') {
-      personagem.diminuirPonto(atributo);
-    }
-    atualizarValores();
-  }
-
-  document.getElementById('somaForca').addEventListener('click', function () {
-    handleAtributoChange('forca', 'aumentar');
+  // Adiciona eventos de clique aos botões de soma e subtração
+  btnSomaForca.addEventListener('click', function () {
+      personagem.aumentarPonto('forca');
+      atualizarValores();
   });
 
-  document.getElementById('subtraiForca').addEventListener('click', function () {
-    handleAtributoChange('forca', 'diminuir');
+  btnSubtraiForca.addEventListener('click', function () {
+      personagem.diminuirPonto('forca');
+      atualizarValores();
   });
 
-  document.getElementById('somaDestreza').addEventListener('click', function () {
-    handleAtributoChange('destreza', 'aumentar');
+  btnSomaDestreza.addEventListener('click', function () {
+      personagem.aumentarPonto('destreza');
+      atualizarValores();
   });
 
-  document.getElementById('subtraiDestreza').addEventListener('click', function () {
-    handleAtributoChange('destreza', 'diminuir');
+  btnSubtraiDestreza.addEventListener('click', function () {
+      personagem.diminuirPonto('destreza');
+      atualizarValores();
   });
 
-  document.getElementById('somaPercepcao').addEventListener('click', function () {
-    handleAtributoChange('percepcao', 'aumentar');
+  btnSomaPercepcao.addEventListener('click', function () {
+      personagem.aumentarPonto('percepcao');
+      atualizarValores();
   });
 
-  document.getElementById('subtraiPercepcao').addEventListener('click', function () {
-    handleAtributoChange('percepcao', 'diminuir');
+  btnSubtraiPercepcao.addEventListener('click', function () {
+      personagem.diminuirPonto('percepcao');
+      atualizarValores();
   });
 
-  document.getElementById('somaCarisma').addEventListener('click', function () {
-    handleAtributoChange('carisma', 'aumentar');
+  btnSomaCarisma.addEventListener('click', function () {
+      personagem.aumentarPonto('carisma');
+      atualizarValores();
   });
 
-  document.getElementById('subtraiCarisma').addEventListener('click', function () {
-    handleAtributoChange('carisma', 'diminuir');
+  btnSubtraiCarisma.addEventListener('click', function () {
+      personagem.diminuirPonto('carisma');
+      atualizarValores();
   });
 
-  document.getElementById('somaInteligencia').addEventListener('click', function () {
-    handleAtributoChange('inteligencia', 'aumentar');
+  btnSomaInteligencia.addEventListener('click', function () {
+      personagem.aumentarPonto('inteligencia');
+      atualizarValores();
   });
 
-  document.getElementById('subtraiInteligencia').addEventListener('click', function () {
-    handleAtributoChange('inteligencia', 'diminuir');
+  btnSubtraiInteligencia.addEventListener('click', function () {
+      personagem.diminuirPonto('inteligencia');
+      atualizarValores();
   });
-});
+
+  // Evento de submissão do formulário
+  document.getElementById('formularioPersonagem').addEventListener('submit', function (event) {
+      event.preventDefault(); // Impede o envio do formulário padrão
+
+      // Obtém os valores dos campos do formulário
+      var nome = document.getElementById('nome').value;
+      var alinhamento = document.getElementById('alinhamento').value;
+
+      personagem.setNome(nome);
+      personagem.setAlinhamento(alinhamento);
+
+      // Insere o novo personagem na lista
+      inserirPersonagem(personagem);
+
+      // Limpa os campos do formulário
+      document.getElementById('nome').value = '';
+      document.getElementById('alinhamento').value = '';
+
+      // Feedback ao usuário (opcional)
+      alert('Personagem criado com sucesso!');
+  });
+
+  // Listar personagens após o carregamento completo da página
+  listarPersonagens();

@@ -1,56 +1,60 @@
-function loadComponent(url) {
-  fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Erro ao carregar o componente de URL: ${url}`);
-      }
-      return response.text();
-    })
-    .then(html => {
-      document.getElementById("divConteudo").innerHTML = html;
-    })
-    .catch(error => {
-      console.error(`Erro ao carregar o componente de URL: ${url}`, error);
+document.addEventListener('DOMContentLoaded', async () => {
+  const divConteudo = document.getElementById('divConteudo');
+  
+  // Carrega a barra de navegação primeiro
+  await loadHTML('../../html/components/navbar.html', divNavbar);
+  
+  // Carrega os scripts iniciais
+  await loadScript('../../js/modules/Action.js');
+  await loadScript('../../js/modules/Personagem.js');
+  await loadScript('../../js/modules/interface.js');
+  await loadScript('../../js/scripts/navbar.js');
+  
+  // Adiciona event listeners aos botões na barra de navegação
+  const links = document.querySelectorAll('#navbarNav button');
+  links.forEach(link => {
+    link.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const componentUrl = link.getAttribute('data-component');
+      const scriptUrl = link.getAttribute('data-script');
+      
+      // Carregar o HTML
+      await loadHTML(componentUrl, divConteudo);
+      
+      // Carregar o Script
+      await loadScript(scriptUrl);
     });
+  });
+});
+
+async function loadHTML(url, container) {
+  try {
+    console.log(`Loading HTML from ${url}`);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to load HTML: ${url}`);
+    }
+    const html = await response.text();
+    container.innerHTML = html;
+    console.log(`HTML loaded from ${url}`);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("scripts").innerHTML += "<script src='/js/scripts/navbar.js'></script>"
-  document.getElementById("scripts").innerHTML += "<script src='/js/modules/Action.js'></script>"
-  document.getElementById("scripts").innerHTML += "<script src='/js/modules/interface.js'></script>"
-  document.getElementById("scripts").innerHTML += "<script src='/js/modules/Personagem.js'></script>"
-  fetch("../html/components/navbar.html")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erro ao carregar o navbar');
-      }
-      return response.text();
-    })
-    .then(html => {
-      document.getElementById("divNavbar").innerHTML = html;
-
-      document.getElementById("linkInstrucoes").addEventListener("click", function() {
-        document.getElementById("scriptsTemporarios").innerHTML = "<script src='/js/scripts/instrucoes.js'></script>"
-        loadComponent("../html/components/instrucoes.html");
-      });
-      document.getElementById("linkBatalha").addEventListener("click", function() {
-        document.getElementById("scriptsTemporarios").innerHTML = "<script src='/js/scripts/batalha.js'></script>"
-        loadComponent("../html/components/batalha.html");
-      });
-      document.getElementById("linkDesafio").addEventListener("click", function() {
-        document.getElementById("scriptsTemporarios").innerHTML = "<script src='/js/scripts/desafio.js'></script>"
-        loadComponent("../html/components/desafio.html");
-      });
-      document.getElementById("linkSorte").addEventListener("click", function() {
-        document.getElementById("scriptsTemporarios").innerHTML = "<script src='/js/scripts/sorte.js'></script>"
-        loadComponent("../html/components/sorte.html");
-      });
-      document.getElementById("linkPersonagens").addEventListener("click", function() {
-        document.getElementById("scriptsTemporarios").innerHTML = "<script src='/js/scripts/personagens.js'></script>"
-        loadComponent("../html/components/personagens.html");
-      });
-    })
-    .catch(error => {
-      console.error("Erro ao carregar o navbar:", error);
-    });
-});
+function loadScript(url) {
+  return new Promise((resolve, reject) => {
+    console.log(`Loading script from ${url}`);
+    const script = document.createElement('script');
+    script.src = url;
+    script.onload = () => {
+      console.log(`Script loaded from ${url}`);
+      resolve(script);
+    };
+    script.onerror = () => {
+      console.error(`Failed to load script: ${url}`);
+      reject(new Error(`Failed to load script: ${url}`));
+    };
+    document.head.appendChild(script);
+  });
+}
