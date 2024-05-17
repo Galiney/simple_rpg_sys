@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const divConteudo = document.getElementById('divConteudo');
+  const divNavbar = document.getElementById('divNavbar')
   
   // Carrega a barra de navegação primeiro
   await loadHTML('../../html/components/navbar.html', divNavbar);
@@ -23,6 +24,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       
       // Carregar o Script
       await loadScript(scriptUrl);
+
+      links.forEach(btn => {
+        btn.disabled = false;
+      });
+      link.disabled = true;
     });
   });
 });

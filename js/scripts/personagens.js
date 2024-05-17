@@ -1,3 +1,4 @@
+function initPersonagens() {
   // Seleciona os botões de soma e subtração para cada atributo
   const btnSomaForca = document.getElementById('somaForca');
   const btnSubtraiForca = document.getElementById('subtraiForca');
@@ -122,3 +123,6 @@
 
   // Listar personagens após o carregamento completo da página
   listarPersonagens();
+}
+
+initPersonagens();

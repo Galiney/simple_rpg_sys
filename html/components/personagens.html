@@ -1,9 +1,14 @@
 <div class="w-100 h-75 justify-content-center d-flex">
-  <div class="card w-25">
+  <div class="card w-25 rounded-end-0" style="height: 650px;">
     <h5 class="card-header">Personagens</h5>
     <ul id="personagens-list" class="list-group mt-3"></ul>
   </div>
-  <div class="card mt-auto">
+
+  <div class="card w-25 rounded-0" style="height: 650px;">
+
+  </div>
+
+  <div class="card mt-auto rounded-start-0" style="min-width: 375px; height: 650px;">
     <h5 class="card-header">Criar Novo Personagem</h5>
     <div class="card-body">
       <form id="formularioPersonagem">
@@ -52,67 +57,55 @@
         <div class="card mt-3" id="cardAtributos">
           <div class="card-header">
             <h5 class="card-title">Distribua os Pontos de atributo</h5>
+            <h6 class="card-subtitle fw-semibold pt-0">Pontos do Nível: <span id="spanPontosNivel" class="fw-bold"></span></h6>
+            <h6 class="card-subtitle mb-1 fw-semibold">Pontos Restantes: <span id="spanPontosRestantes" class="fw-bold"></span></h6>
           </div>
           <div class="card-body">
             <div class="card w-90 m-0">
-              <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Força:</p>
-              </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button id="subtraiForca" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanForca"
+                <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Força:</button>
+                <button id="subtraiForca" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanForca"
                     class="fw-semibold"></span></button>
-                <button id="somaForca" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="somaForca" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
-              <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Destreza:</p>
-              </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button id="subtraiDestreza" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanDestreza"
+                <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Destreza:</button>
+                <button id="subtraiDestreza" type="button" class="btn btn-danger m-0  pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0  pt-0 pb-0" disabled><span id="spanDestreza"
                     class="fw-semibold"></span></button>
-                <button id="somaDestreza" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="somaDestreza" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
-              <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Percepção:</p>
-              </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button id="subtraiPercepcao" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanPercepcao"
+                <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Percepção:</button>
+                <button id="subtraiPercepcao" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanPercepcao"
                     class="fw-semibold"></span></button>
-                <button id="somaPercepcao" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="somaPercepcao" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
-              <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Carisma:</p>
-              </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button id="subtraiCarisma" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanCarisma"
+                <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Carisma:</button>
+                <button id="subtraiCarisma" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanCarisma"
                     class="fw-semibold"></span></button>
-                <button id="somaCarisma" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="somaCarisma" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
               </div>
             </div>
             <div class="card w-90 m-0 mt-3">
-              <div class="card-header pt-0 pb-0">
-                <p class="mb-1 fw-semibold text-center">Inteligência:</p>
-              </div>
               <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
-                <button id="subtraiInteligencia" type="button" class="btn btn-danger m-0 rounded-top-0 pt-0 pb-0">-</button>
-                <button type="button" class="btn btn-outline-primary m-0 rounded-top-0 pt-0 pb-0" disabled><span id="spanInteligencia"
+                <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Inteligência:</button>
+                <button id="subtraiInteligencia" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanInteligencia"
                     class="fw-semibold"></span></button>
-                <button id="somaInteligencia" type="button" class="btn btn-success m-0 rounded-top-0 pt-0 pb-0">+</button>
+                <button id="somaInteligencia" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
               </div>
             </div>
-          </div>
-          <div class="card-footer">
-            <p class="mb-1 fw-semibold">Pontos do Nível: <span id="spanPontosNivel" class="fw-bold"></span></p>
-            <p class="mb-1 fw-semibold">Pontos Restantes: <span id="spanPontosRestantes" class="fw-bold"></span></p>
           </div>
         </div>
         <!-- Adicione mais campos para outros atributos do personagem, se necessário -->
