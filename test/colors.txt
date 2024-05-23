@@ -1,0 +1,8 @@
+--text: #06232d;
+--background: #f2fafd;
+--primary: #116c83;
+--secondary: #b669ec;
+--accent: #bc19c2;
+--logo-font: Grenze Gotisch
+--header-font: Grenze
+--body-font: Labrada

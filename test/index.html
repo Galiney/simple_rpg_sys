@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Component Loading</title>
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#" data-component="component1.html" data-script="component1.js">Component 1</a></li>
-            <li><a href="#" data-component="component2.html" data-script="component2.js">Component 2</a></li>
-        </ul>
-    </nav>
-    <div id="divConteudo"></div>
+    <button id="toggleButton">☰</button>
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="closebtn" id="closeBtn">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
