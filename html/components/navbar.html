@@ -1,22 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-secondary text-white" id="navbar">
-  <div class="container-fluid">
-    <div class="d-flex align-items-center">
-      <a class="navbar-brand" href="#" id="logo">Simple por Galiney</a>
-      <div id="navbarNav">
-        <div class="d-flex flex-row">
-          <button id="linkInstrucoes" class="btn me-3" data-component="../../html/components/instrucoes.html" data-script="../../js/scripts/instrucoes.js" >Instruções</button>
-          <button id="linkBatalha" class="btn me-3" data-component="../../html/components/batalha.html" data-script="../../js/scripts/batalha.js" >Batalha</button>
-          <button id="linkDesafio" class="btn me-3" data-component="../../html/components/desafio.html" data-script="../../js/scripts/desafio.js" >Desafio</button>
-          <button id="linkSorte" class="btn me-3" data-component="../../html/components/sorte.html" data-script="../../js/scripts/sorte.js" >Sorte</button>
-          <button id="linkPersonagens" class="btn me-3" data-component="../../html/components/personagens.html" data-script="../../js/scripts/personagens.js" >Personagens</button>
-        </div>        
-      </div>      
+<nav class="navbar navbar-expand-lg p-3 mb-2 border-bottom border-3" id="navbar">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="#" id="logo">
+      <img id="navLogo" src="/assets/icons/logo-empty-light.png" alt="Simple Beginnings">
+    </a>
+
+    <div id="navbarNav" class="d-flex justify-content-center">
+      <div class="d-flex flex-row">
+        <button id="linkInstrucoes" class="btn me-1 fs-3 default-text fw-bold" data-component="../../html/components/instrucoes.html"
+          data-script="../../js/scripts/instrucoes.js">Instruções</button>
+        <button id="linkBatalha" class="btn me-1 fs-3 default-text fw-bold" data-component="../../html/components/batalha.html"
+          data-script="../../js/scripts/batalha.js">Batalha</button>
+        <button id="linkDesafio" class="btn me-1 fs-3 default-text fw-bold" data-component="../../html/components/desafio.html"
+          data-script="../../js/scripts/desafio.js">Desafio</button>
+        <button id="linkSorte" class="btn me-1 fs-3 default-text fw-bold" data-component="../../html/components/sorte.html"
+          data-script="../../js/scripts/sorte.js">Sorte</button>
+        <button id="linkPersonagens" class="btn me-1 fs-3 default-text fw-bold" data-component="../../html/components/personagens.html"
+          data-script="../../js/scripts/personagens.js">Personagens</button>
+      </div>
     </div>
-    <form class="d-flex align-items-center" style="max-width: 565px; min-width: 565px;">
-      <input class="form-control me-2" type="email" placeholder="Email" aria-label="Email" id="campoEmail">
-      <input class="form-control me-2" type="password" placeholder="Senha" aria-label="Senha" id="campoSenha">
-      <button class="btn btn-success me-2" type="submit" id="botaoEntrar">Entrar</button>
-      <button class="btn btn-info" type="submit" id="botaoRegistrar">Registrar</button>
-    </form>
+
+    <div class="d-flex">
+      <form class="d-flex">
+        <div class="flex-column ms-3">
+          <input class="form-control mb-1 fw-bold accent-focus" type="email" placeholder="Email" aria-label="Email" id="campoEmail">
+          <input class="form-control fw-bold accent-focus" type="password" placeholder="Senha" aria-label="Senha" id="campoSenha">
+        </div>
+        <div class="d-flex flex-column ms-1">
+          <button class="btn mb-1 fw-bold primary-bg" type="submit" id="botaoEntrar">Entrar</button>
+          <button class="btn fw-bold secondary-bg" type="submit" id="botaoRegistrar">Registrar</button>
+        </div>
+      </form>
+      <div class="form-check form-switch ms-4">
+        <input class="form-check-input secondary-focus" type="checkbox" id="themeToggle">
+        <label class="form-check-label" for="themeToggle" id="themeLabel">☀</label>
+      </div>
+      
+    </div>
   </div>
 </nav>

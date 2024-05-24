@@ -1,0 +1,129 @@
+:root {
+  /* Light Theme Colors */
+  --text-light: 6, 35, 45;
+--background-light: 242, 250, 253;
+--primary-light: 17, 108, 131;
+--secondary-light: 182, 105, 236;
+--accent-light: 188, 25, 194;
+
+  /* Dark Theme Colors */
+  --text-dark: 210, 239, 249;
+--background-dark: 2, 10, 13;
+--primary-dark: 124, 215, 238;
+--secondary-dark: 95, 19, 150;
+--accent-dark: 224, 61, 230;
+
+  /* Fonts */
+  --logo-font: 'Grenze Gotisch', serif;
+  --header-font: 'Grenze', serif;
+  --body-font: 'Labrada', serif;
+}
+
+/* Font Settings */
+h1, h2, h3, h4, h5, h6, button {
+  font-family: rgb(var(--header-font));
+}
+
+body {
+  font-family: rgb(var(--body-font));
+}
+
+/* Light Theme */
+body.light-theme {
+  color: rgb(var(--text-light));
+  background-color: rgb(var(--background-light));
+}
+
+body.light-theme .default-text {
+  color: rgb(var(--text-light));
+}
+
+body.light-theme .primary-text {
+  color: rgb(var(--primary-light));
+}
+
+body.light-theme .secondary-text {
+  color: rgb(var(--secondary-light));
+}
+
+body.light-theme .accent-text {
+  color: rgb(var(--accent-light));
+}
+
+body.light-theme .primary-bg {
+  background-color: rgb(var(--primary-light));
+  color: rgb(var(--text-dark));
+}
+
+body.light-theme .secondary-bg {
+  background-color: rgb(var(--secondary-light));
+  color: rgb(var(--text-light));
+}
+
+body.light-theme .accent-bg {
+  background-color: rgb(var(--accent-light));
+  color: rgb(var(--text-dark));
+  border-color: rgb(var(--accent-light));
+}
+
+body.light-theme .primary-focus:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-light), 0.5) !important;
+}
+
+body.ligth-theme .secondary-focus:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--secondary-light), 0.5) !important;
+}
+
+body.light-theme .accent-focus:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--accent-light), 0.5) !important;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  color: rgb(var(--text-dark));
+  background-color: rgb(var(--background-dark));
+}
+
+body.dark-theme .default-text {
+  color: rgb(var(--text-dark));
+}
+
+body.dark-theme .primary-text {
+  color: rgb(var(--primary-dark));
+}
+
+body.dark-theme .secondary-text {
+  color: rgb(var(--secondary-dark));
+}
+
+body.dark-theme .accent-text {
+  color: rgb(var(--accent-dark));
+}
+
+body.dark-theme .primary-bg {
+  background-color: rgb(var(--primary-dark));
+  color: rgb(var(--text-light));
+}
+
+body.dark-theme .secondary-bg {
+  background-color: rgb(var(--secondary-dark));
+  color: rgb(var(--text-dark));
+  border-color: rgb(var(--secondary-dark));
+}
+
+body.dark-theme .accent-bg {
+  background-color: rgb(var(--accent-dark));
+  color: rgb(var(--text-light));
+}
+
+body.dark-theme .primary-focus:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-dark), 0.5) !important;
+}
+
+body.dark-theme .secondary-focus:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--secondary-dark), 0.5) !important;
+}
+
+body.dark-theme .accent-focus:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--accent-dark), 0.5) !important;
+}
