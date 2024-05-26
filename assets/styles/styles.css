@@ -1,17 +1,17 @@
 :root {
   /* Light Theme Colors */
-  --text-light: 6, 35, 45;
---background-light: 242, 250, 253;
---primary-light: 17, 108, 131;
---secondary-light: 182, 105, 236;
---accent-light: 188, 25, 194;
+  --text-light: 6, 35, 45;            /*rgb(6, 35, 45)*/
+  --background-light: 242, 250, 253;  /*rgb(242, 250, 253)*/ 
+  --primary-light: 17, 108, 131;      /*rgb(17, 108, 131)*/
+  --secondary-light: 182, 105, 236;   /*rgb(182, 105, 236)*/
+  --accent-light: 188, 25, 194;       /*rgb(188, 25, 194)*/
 
   /* Dark Theme Colors */
-  --text-dark: 210, 239, 249;
---background-dark: 2, 10, 13;
---primary-dark: 124, 215, 238;
---secondary-dark: 95, 19, 150;
---accent-dark: 224, 61, 230;
+  --text-dark: 210, 239, 249;         /*rgb(210, 239, 249)*/
+  --background-dark: 2, 10, 13;       /*rgb(2, 10, 13)*/
+  --primary-dark: 124, 215, 238;      /*rgb(124, 215, 238)*/
+  --secondary-dark: 95, 19, 150;      /*rgb(95, 19, 150)*/
+  --accent-dark: 224, 61, 230;        /*rgb(224, 61, 230)*/
 
   /* Fonts */
   --logo-font: 'Grenze Gotisch', serif;
@@ -20,7 +20,13 @@
 }
 
 /* Font Settings */
-h1, h2, h3, h4, h5, h6, button {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
   font-family: rgb(var(--header-font));
 }
 
@@ -78,6 +84,10 @@ body.light-theme .accent-focus:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--accent-light), 0.5) !important;
 }
 
+body.light-theme .grad-br {
+  border-image: linear-gradient(45deg, rgb(var(--primary-light)),rgb(var(--secondary-light)), rgb(var(--accent-light))) 50;
+}
+
 /* Dark Theme */
 body.dark-theme {
   color: rgb(var(--text-dark));
@@ -108,12 +118,15 @@ body.dark-theme .primary-bg {
 body.dark-theme .secondary-bg {
   background-color: rgb(var(--secondary-dark));
   color: rgb(var(--text-dark));
-  border-color: rgb(var(--secondary-dark));
 }
 
 body.dark-theme .accent-bg {
   background-color: rgb(var(--accent-dark));
   color: rgb(var(--text-light));
+}
+
+body.dark-theme .grad-br {
+  border-image: linear-gradient(45deg, rgb(var(--primary-dark)),rgb(var(--secondary-dark)), rgb(var(--accent-dark))) 50;
 }
 
 body.dark-theme .primary-focus:focus {
@@ -128,26 +141,26 @@ body.dark-theme .accent-focus:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--accent-dark), 0.5) !important;
 }
 
-.c-switch:focus{
+.c-switch:focus {
   border-color: rgb(var(--accent-light)) !important;
   box-shadow: 0 0 0 0.2rem rgba(var(--accent-light), 0.25) !important;
 }
 
-.c-switch:checked{
+.c-switch:checked {
   border-color: rgb(var(--accent-light)) !important;
   background-color: rgb(var(--accent-light)) !important;
 }
 
-.c-switch:active{
+.c-switch:active {
   background-color: rgb(var(--accent-light)) !important;
   border-color: rgb(var(--accent-light)) !important;
 }
 
-.c-switch:focus:not(:checked){
+.c-switch:focus:not(:checked) {
   border-color: rgb(var(--accent-light)) !important;
 }
 
-.c-switch:not(:disabled):active{
+.c-switch:not(:disabled):active {
   background-color: rgb(var(--accent-light)) !important;
   border-color: rgb(var(--accent-light)) !important;
 }
