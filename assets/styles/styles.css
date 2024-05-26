@@ -127,3 +127,27 @@ body.dark-theme .secondary-focus:focus {
 body.dark-theme .accent-focus:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--accent-dark), 0.5) !important;
 }
+
+.c-switch:focus{
+  border-color: rgb(var(--accent-light)) !important;
+  box-shadow: 0 0 0 0.2rem rgba(var(--accent-light), 0.25) !important;
+}
+
+.c-switch:checked{
+  border-color: rgb(var(--accent-light)) !important;
+  background-color: rgb(var(--accent-light)) !important;
+}
+
+.c-switch:active{
+  background-color: rgb(var(--accent-light)) !important;
+  border-color: rgb(var(--accent-light)) !important;
+}
+
+.c-switch:focus:not(:checked){
+  border-color: rgb(var(--accent-light)) !important;
+}
+
+.c-switch:not(:disabled):active{
+  background-color: rgb(var(--accent-light)) !important;
+  border-color: rgb(var(--accent-light)) !important;
+}
