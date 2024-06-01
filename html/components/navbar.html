@@ -1,54 +1,48 @@
-<nav class="navbar navbar-expand-lg p-3 mb-2 border-bottom border-3 grad-br" id="navbar" role="navigation">
+<nav id="navbar" class="navbar border-bottom border-4 grad-br" role="navigation">
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <a class="navbar-brand" href="#" id="logo">
-      <img id="navLogo" src="/assets/icons/logo-empty-light.png" alt="Simple Beginnings">
-    </a>
-
-    <div class="d-flex flex-grow-1 justify-content-center" id="navbarNav">
-      <div class="d-flex justify-content-center">
-        <div class="d-flex flex-row">
-          <button id="linkInstrucoes" class="btn me-1 fs-3 default-text fw-bold navButton"
-            data-component="../../html/components/instrucoes.html"
-            data-script="../../js/scripts/instrucoes.js">Instruções</button>
-          <button id="linkBatalha" class="btn me-1 fs-3 default-text fw-bold navButton"
-            data-component="../../html/components/batalha.html"
-            data-script="../../js/scripts/batalha.js">Batalha</button>
-          <button id="linkDesafio" class="btn me-1 fs-3 default-text fw-bold navButton"
-            data-component="../../html/components/desafio.html"
-            data-script="../../js/scripts/desafio.js">Desafio</button>
-          <button id="linkSorte" class="btn me-1 fs-3 default-text fw-bold navButton"
-            data-component="../../html/components/sorte.html" data-script="../../js/scripts/sorte.js">Sorte</button>
-          <button id="linkPersonagens" class="btn me-1 fs-3 default-text fw-bold navButton"
-            data-component="../../html/components/personagens.html"
-            data-script="../../js/scripts/personagens.js">Personagens</button>
-        </div>
-      </div>
-
-      <div class="d-flex" id="formTheme">
-        <form class="d-flex">
-          <div class="flex-column ms-3">
-            <label for="campoEmail" class="visually-hidden">Email</label>
-            <input class="form-control mb-1 fw-bold accent-focus" type="email" placeholder="Email" aria-label="Email"
-              id="campoEmail">
-            <label for="campoSenha" class="visually-hidden">Senha</label>
-            <input class="form-control fw-bold accent-focus" type="password" placeholder="Senha" aria-label="Senha"
-              id="campoSenha">
-          </div>
-          <div class="d-flex flex-column ms-1">
-            <button class="btn mb-1 fw-bold primary-bg" type="submit" id="botaoEntrar">Entrar</button>
-            <button class="btn fw-bold secondary-bg" type="submit" id="botaoRegistrar">Registrar</button>
-          </div>
-        </form>
-        <div class="form-check form-switch ms-4">
-          <input class="form-check-input secondary-focus c-switch" type="checkbox" id="themeToggle">
-          <label class="form-check-label" for="themeToggle" id="themeLabel">☀</label>
-        </div>
-      </div>
-      <button class="btn d-xl-none fs-5 accent-bg " id="toggleFormTheme">⚙</button>
+    <div class="divLogo">
+      <a href="#" id="logo" class="navbar-brand">
+        <img id="navLogo" src="/assets/icons/logo-empty-light.png" alt="Simple Beginnings">
+      </a>
     </div>
 
-    <button class="btn d-lg-none fs-5 accent-bg " id="toggleNavbarNav">☰</button>
+    <div id="divLinks" role="group" aria-label="Botões de navegação">
+      <button id="linkInstrucoes" class="btn fs-3 default-text" data-component="../../html/components/instrucoes.html"
+        data-script="../../js/scripts/instrucoes.js">Instruções</button>
+      <button id="linkBatalha" class="btn fs-3 default-text" data-component="../../html/components/batalha.html"
+        data-script="../../js/scripts/batalha.js">Batalha</button>
+      <button id="linkDesafio" class="btn fs-3 default-text" data-component="../../html/components/desafio.html"
+        data-script="../../js/scripts/desafio.js">Desafio</button>
+      <button id="linkSorte" class="btn fs-3 default-text" data-component="../../html/components/sorte.html"
+        data-script="../../js/scripts/sorte.js">Sorte</button>
+      <button id="linkPersonagens" class="btn fs-3 default-text" data-component="../../html/components/personagens.html"
+        data-script="../../js/scripts/personagens.js">Personagens</button>
+    </div>
+
+    <div id="divUserForm">
+      <form class="d-flex">
+        <div class="form-group d-flex flex-column">
+          <input type="email" class="form-control mb-1 accent-focus" placeholder="Email" aria-label="Email"
+            id="campoEmail">
+          <input type="password" class="form-control accent-focus" placeholder="Senha" aria-label="Senha"
+            id="campoSenha">
+        </div>
+        <div class="form-group d-flex flex-column ms-1">
+          <button type="submit" class="btn mb-1 primary-bg" id="botaoEntrar">Entrar</button>
+          <button type="submit" class="btn secondary-bg" id="botaoRegistrar">Registrar</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="divToggles" class="d-flex justify-content-between align-items-center">
+      <button id="toggleUserForm" class="btn accent-bg me-3">
+        <span class="material-symbols-outlined">passkey</span>
+      </button>
+      <button id="toggleNavbarNav" class="btn accent-bg fs-5 fw-bold me-3">☰</button>
+      <div class="form-check form-switch m-0 p-0">
+        <input class="form-check-input m-0 mt-1 p-0" type="checkbox" role="switch" id="themeToggle">
+        <label class="form-check-label m-0 ms-1 p-0" for="themeToggle" id="themeLabel">☀</label>
+      </div>
+    </div>
   </div>
 </nav>
-<div id="extraContent"></div>
-

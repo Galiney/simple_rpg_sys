@@ -5,13 +5,14 @@
   --primary-light: 17, 108, 131;      /*rgb(17, 108, 131)*/
   --secondary-light: 182, 105, 236;   /*rgb(182, 105, 236)*/
   --accent-light: 188, 25, 194;       /*rgb(188, 25, 194)*/
-
+  --gradient-light: linear-gradient(45deg, rgb(var(--primary-light)),rgb(var(--secondary-light)), rgb(var(--accent-light))) 50;
   /* Dark Theme Colors */
   --text-dark: 210, 239, 249;         /*rgb(210, 239, 249)*/
   --background-dark: 2, 10, 13;       /*rgb(2, 10, 13)*/
   --primary-dark: 124, 215, 238;      /*rgb(124, 215, 238)*/
   --secondary-dark: 95, 19, 150;      /*rgb(95, 19, 150)*/
   --accent-dark: 224, 61, 230;        /*rgb(224, 61, 230)*/
+  --gradient-dark: linear-gradient(45deg, rgb(var(--primary-dark)),rgb(var(--secondary-dark)), rgb(var(--accent-dark))) 50;
 
   /* Fonts */
   --logo-font: 'Grenze Gotisch', serif;
@@ -19,7 +20,6 @@
   --body-font: 'Labrada', serif;
 }
 
-/* Font Settings */
 h1,
 h2,
 h3,
@@ -27,11 +27,12 @@ h4,
 h5,
 h6,
 button {
-  font-family: rgb(var(--header-font));
+  font-family: var(--header-font);
 }
 
 body {
-  font-family: rgb(var(--body-font));
+  min-width: 320px;
+  font-family: var(--body-font);
 }
 
 /* Light Theme */
@@ -85,7 +86,7 @@ body.light-theme .accent-focus:focus {
 }
 
 body.light-theme .grad-br {
-  border-image: linear-gradient(45deg, rgb(var(--primary-light)),rgb(var(--secondary-light)), rgb(var(--accent-light))) 50;
+  border-image: var(--gradient-light)
 }
 
 /* Dark Theme */
@@ -126,7 +127,7 @@ body.dark-theme .accent-bg {
 }
 
 body.dark-theme .grad-br {
-  border-image: linear-gradient(45deg, rgb(var(--primary-dark)),rgb(var(--secondary-dark)), rgb(var(--accent-dark))) 50;
+  border-image: var(--gradient-dark)
 }
 
 body.dark-theme .primary-focus:focus {
@@ -141,26 +142,74 @@ body.dark-theme .accent-focus:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--accent-dark), 0.5) !important;
 }
 
-.c-switch:focus {
-  border-color: rgb(var(--accent-light)) !important;
-  box-shadow: 0 0 0 0.2rem rgba(var(--accent-light), 0.25) !important;
+.divLogo {
+  font-family: var(--logo-font);
+  background: linear-gradient(45deg, rgb(var(--primary-dark)), rgb(var(--secondary-dark)), rgb(var(--accent-dark)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.c-switch:checked {
-  border-color: rgb(var(--accent-light)) !important;
-  background-color: rgb(var(--accent-light)) !important;
+.form-switch .form-check-input {
+  height: 16px;
+  width: 30px;
+}
+.form-switch .form-check-input:focus {
+  border-color: rgb(var(--accent-light));
+  box-shadow: 0 0 0 0.2rem rgba(var(--accent-dark), 0.5);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(6, 35, 45,0.25)'/></svg>");
+}
+.form-switch .form-check-input:checked {
+  background-color: rgb(var(--accent-light));
+  border-color: rgb(var(--accent-light));
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(242, 250, 253,0.75)'/></svg>");
 }
 
-.c-switch:active {
-  background-color: rgb(var(--accent-light)) !important;
-  border-color: rgb(var(--accent-light)) !important;
+.fixed-card {
+  position: fixed;
+  top: 70px; /* Ajuste conforme necessário para a altura da sua navbar */
+  right: 0px;
+  width: 300px; /* Ajuste conforme necessário */
+  background-color: #fff; /* Ajuste conforme necessário */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.c-switch:focus:not(:checked) {
-  border-color: rgb(var(--accent-light)) !important;
+/* Light Theme for fixed-card */
+body.light-theme .fixed-card {
+  background-color: rgb(var(--background-light));
+  color: rgb(var(--text-light));
+  border: 2px solid;
+  border-image: var(--gradient-light) 1;
+  box-shadow: 0px 4px 8px rgba(var(--text-light), 0.2);
 }
 
-.c-switch:not(:disabled):active {
-  background-color: rgb(var(--accent-light)) !important;
-  border-color: rgb(var(--accent-light)) !important;
+/* Dark Theme for fixed-card */
+body.dark-theme .fixed-card {
+  background-color: rgb(var(--background-dark));
+  color: rgb(var(--text-dark));
+  border: 2px solid;
+  border-image: var(--gradient-dark) 1;
+  box-shadow: 0px 4px 8px rgba(var(--text-dark), 0.1);
+}
+
+@media (max-width: 992px) {
+  #divLinks, #toggleUserForm {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+#toggleUserForm {
+  width: 50px;
+  height: 50px;
+}
+
+#toggleNavbarNav {
+  width: 50px;
+  height: 50px;
 }
