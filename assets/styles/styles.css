@@ -5,14 +5,14 @@
   --primary-light: 17, 108, 131;      /*rgb(17, 108, 131)*/
   --secondary-light: 182, 105, 236;   /*rgb(182, 105, 236)*/
   --accent-light: 188, 25, 194;       /*rgb(188, 25, 194)*/
-  --gradient-light: linear-gradient(45deg, rgb(var(--primary-light)),rgb(var(--secondary-light)), rgb(var(--accent-light))) 50;
+  --gradient-light: linear-gradient(90deg, rgb(var(--primary-light)),rgb(var(--secondary-light)), rgb(var(--accent-light)));
   /* Dark Theme Colors */
   --text-dark: 210, 239, 249;         /*rgb(210, 239, 249)*/
   --background-dark: 2, 10, 13;       /*rgb(2, 10, 13)*/
   --primary-dark: 124, 215, 238;      /*rgb(124, 215, 238)*/
   --secondary-dark: 95, 19, 150;      /*rgb(95, 19, 150)*/
   --accent-dark: 224, 61, 230;        /*rgb(224, 61, 230)*/
-  --gradient-dark: linear-gradient(45deg, rgb(var(--primary-dark)),rgb(var(--secondary-dark)), rgb(var(--accent-dark))) 50;
+  --gradient-dark: linear-gradient(90deg, rgb(var(--primary-dark)),rgb(var(--secondary-dark)), rgb(var(--accent-dark)));
 
   /* Fonts */
   --logo-font: 'Grenze Gotisch', serif;
@@ -28,6 +28,18 @@ h5,
 h6,
 button {
   font-family: var(--header-font);
+}
+
+body.light-theme .card {
+  color: rgb(var(--text-light));
+  background-color: rgb(var(--background-light));
+  box-shadow: 0px 4px 8px rgba(var(--text-light), 0.2);
+}
+
+body.dark-theme .card {
+  color: rgb(var(--text-dark));
+  background-color: rgb(var(--background-dark));
+  box-shadow: 0px 4px 8px rgba(var(--text-dark), 0.1);
 }
 
 body {
@@ -57,6 +69,11 @@ body.light-theme .accent-text {
   color: rgb(var(--accent-light));
 }
 
+body.light-theme .neutral-bg {
+  background-color: rgb(var(--background-light));
+  color: rgb(var(--text-light));
+}
+
 body.light-theme .primary-bg {
   background-color: rgb(var(--primary-light));
   color: rgb(var(--text-dark));
@@ -70,14 +87,18 @@ body.light-theme .secondary-bg {
 body.light-theme .accent-bg {
   background-color: rgb(var(--accent-light));
   color: rgb(var(--text-dark));
-  border-color: rgb(var(--accent-light));
+}
+
+body.light-theme .grad-bg {
+  background-image: var(--gradient-light);
+  color: rgb(var(--text-dark));
 }
 
 body.light-theme .primary-focus:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--primary-light), 0.5) !important;
 }
 
-body.ligth-theme .secondary-focus:focus {
+body.light-theme .secondary-focus:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--secondary-light), 0.5) !important;
 }
 
@@ -85,8 +106,20 @@ body.light-theme .accent-focus:focus {
   box-shadow: 0 0 0 0.2rem rgba(var(--accent-light), 0.5) !important;
 }
 
+body.light-theme .primary-br {
+  border-color: rgb(var(--primary-light));
+}
+
+body.light-theme .secondary-br {
+  border-color: rgb(var(--secondary-light));
+}
+
+body.light-theme .accent-br {
+  border-color: rgb(var(--accent-light));
+}
+
 body.light-theme .grad-br {
-  border-image: var(--gradient-light)
+  border-image: var(--gradient-light) 50;
 }
 
 /* Dark Theme */
@@ -126,8 +159,28 @@ body.dark-theme .accent-bg {
   color: rgb(var(--text-light));
 }
 
+body.dark-theme .grad-bg {
+  background-image: var(--gradient-dark);
+}
+
+body.dark-theme .primary-br {
+  border-color: rgb(var(--primary-dark));
+}
+
+body.dark-theme .secondary-br {
+  border-color: rgb(var(--secondary-dark));
+}
+
+body.dark-theme .accent-br {
+  border-color: rgb(var(--accent-dark));
+}
+
 body.dark-theme .grad-br {
-  border-image: var(--gradient-dark)
+  border-image: var(--gradient-dark) 50;
+}
+
+body.dark-theme .grad-bg {
+  background-image: var(--gradient-dark);
 }
 
 body.dark-theme .primary-focus:focus {

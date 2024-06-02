@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadScript('../../js/scripts/navbar.js');
   
   // Adiciona event listeners aos botões na barra de navegação
-  const links = document.querySelectorAll('#navbarNav button.navButton');
+  const links = document.querySelectorAll('#divLinks button');
   links.forEach(link => {
     link.addEventListener('click', async (event) => {
       event.preventDefault();
