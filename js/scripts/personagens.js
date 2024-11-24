@@ -16,11 +16,11 @@ function initPersonagens() {
   // Função para atualizar os valores exibidos na página
   function atualizarValores() {
       // Atualiza os valores dos spans com os valores dos atributos do personagem
-      document.getElementById('spanForca').textContent = personagem.atributos.forca.valor;
-      document.getElementById('spanDestreza').textContent = personagem.atributos.destreza.valor;
-      document.getElementById('spanPercepcao').textContent = personagem.atributos.percepcao.valor;
-      document.getElementById('spanCarisma').textContent = personagem.atributos.carisma.valor;
-      document.getElementById('spanInteligencia').textContent = personagem.atributos.inteligencia.valor;
+      document.getElementById('spanForca').textContent = personagem.atributos.forca;
+      document.getElementById('spanDestreza').textContent = personagem.atributos.destreza;
+      document.getElementById('spanPercepcao').textContent = personagem.atributos.percepcao;
+      document.getElementById('spanCarisma').textContent = personagem.atributos.carisma;
+      document.getElementById('spanInteligencia').textContent = personagem.atributos.inteligencia;
       document.getElementById('spanPontosNivel').textContent = personagem.calcularPontosNivel(); // Calcula os pontos do nível
       document.getElementById('spanPontosRestantes').textContent = personagem.pontoAtributos; // Obtém os pontos restantes do personagem
   }

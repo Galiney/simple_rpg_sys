@@ -1,32 +1,53 @@
-  preencherSelect('personagem1', 'cardPersonagem1');
-  preencherSelect('personagem2', 'cardPersonagem2');
+// Supondo que você tenha uma função preencherSelect
+preencherSelect('personagem1', 'cardPersonagem1');
+preencherSelect('personagem2', 'cardPersonagem2');
 
-  // Adiciona um evento de clique ao botão
-  document.getElementById('botaoBatalha').addEventListener('click', function () {
-      let dadoAliadoElemento = document.getElementById('dadoAliado');
-      let dadoInimigoElemento = document.getElementById('dadoInimigo');
-      let resultadoElemento = document.getElementById('resultado');
-      let personagemSelecionado1 = document.getElementById('personagem1').value;
-      let personagemSelecionado2 = document.getElementById('personagem2').value;
+// Adiciona um evento de clique ao botão
+document.getElementById('botaoBatalha').addEventListener('click', function () {
+  let dadoAliadoElemento = document.getElementById('dadoAliado');
+  let atributoAliadoElemento = document.getElementById('atributoAliado');
+  let dadoInimigoElemento = document.getElementById('dadoInimigo');
+  let atributoInimigoElemento = document.getElementById('atributoInimigo');
+  let resultadoElemento = document.getElementById('resultado');
+  let personagemSelecionado1 = document.getElementById('personagem1').value;
+  let personagemSelecionado2 = document.getElementById('personagem2').value;
 
-      let personagens = JSON.parse(localStorage.getItem('personagens')) || [];
+  // Recupera os dados do personagem armazenados no localStorage
+  let personagens = JSON.parse(localStorage.getItem('personagens')) || [];
 
-      let aliadoArmazenado = personagens.find(personagem => personagem.nome === personagemSelecionado1);
-      let inimigoArmazenado = personagens.find(personagem => personagem.nome === personagemSelecionado2);
+  // Encontra os personagens selecionados
+  let aliadoArmazenado = personagens.find(personagem => personagem.nome === personagemSelecionado1);
+  let inimigoArmazenado = personagens.find(personagem => personagem.nome === personagemSelecionado2);
 
-      let aliado = new Personagem(aliadoArmazenado.nome, aliadoArmazenado.nivel, aliadoArmazenado.alinhamento);
-      let inimigo = new Personagem(inimigoArmazenado.nome, inimigoArmazenado.nivel, inimigoArmazenado.alinhamento);
+  if (!aliadoArmazenado || !inimigoArmazenado) {
+    resultadoElemento.textContent = 'Personagem(s) não encontrado(s).';
+    return;
+  }
 
+  // Cria a instância de Personagem
+  let aliado = new Personagem();
+  aliado.preencher(aliadoArmazenado);  // Preenche com os dados do personagem armazenado
 
-      let atributoSelecionado = document.getElementById('atributo').value;
-      let dado = aliado.selecionarDado(atributoSelecionado);
+  let inimigo = new Personagem();
+  inimigo.preencher(inimigoArmazenado);  // Preenche com os dados do personagem armazenado
 
-      let action = new Action(dado, atributoSelecionado, aliado, inimigo);
+  let atributoSelecionado = document.getElementById('atributo').value;
+  let dado = aliado.selecionarDado(atributoSelecionado);
 
-      let resultado = action.batalha();
+  let action = new Action(dado, atributoSelecionado, aliado, inimigo);
 
-      dadoAliadoElemento.textContent = resultado[2];
-      dadoInimigoElemento.textContent = resultado[3];
-      resultadoElemento.textContent = resultado[1];
+  let resultado = action.batalha();
 
-  });
+  atributoAliadoElemento.textContent = ("+" + aliado.atributos[atributoSelecionado])
+  atributoInimigoElemento.textContent = ("+" + inimigo.atributos[atributoSelecionado])
+
+  // Verificando se o resultado retornado tem o formato esperado
+  if (Array.isArray(resultado) && resultado.length >= 4) {
+    dadoAliadoElemento.textContent = resultado[1];
+    dadoInimigoElemento.textContent = resultado[2];
+    resultadoElemento.textContent = resultado[3];
+  } else {
+    resultadoElemento.textContent = 'Erro na batalha. Resultado inválido.';
+  }
+
+});
