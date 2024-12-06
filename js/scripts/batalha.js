@@ -4,9 +4,7 @@ preencherSelect('personagem2', 'cardPersonagem2');
 
 // Adiciona um evento de clique ao botão
 document.getElementById('botaoBatalha').addEventListener('click', function () {
-  let dadoAliadoElemento = document.getElementById('dadoAliado');
   let atributoAliadoElemento = document.getElementById('atributoAliado');
-  let dadoInimigoElemento = document.getElementById('dadoInimigo');
   let atributoInimigoElemento = document.getElementById('atributoInimigo');
   let resultadoElemento = document.getElementById('resultado');
   let personagemSelecionado1 = document.getElementById('personagem1').value;
@@ -43,9 +41,8 @@ document.getElementById('botaoBatalha').addEventListener('click', function () {
 
   // Verificando se o resultado retornado tem o formato esperado
   if (Array.isArray(resultado) && resultado.length >= 4) {
-    dadoAliadoElemento.textContent = resultado[1];
-    dadoInimigoElemento.textContent = resultado[2];
-    resultadoElemento.textContent = resultado[3];
+    animarDado('dadoAliado', 'resultado', resultado[1], resultado[3])
+    animarDado('dadoInimigo', 'resultado', resultado[2], resultado[3])
   } else {
     resultadoElemento.textContent = 'Erro na batalha. Resultado inválido.';
   }

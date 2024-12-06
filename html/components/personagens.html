@@ -1,15 +1,89 @@
-<div class="w-100 h-75 justify-content-center d-flex">
-  <div class="card w-25 rounded-end-0" style="height: 650px;">
-    <h5 class="card-header">Personagens</h5>
+<div class="w-100 h-100 justify-content-center d-flex">
+  <div class="card w-25 rounded-end-0">
+    <h5 class="card-header grad-bg">Personagens</h5>
     <ul id="personagens-list" class="list-group mt-3"></ul>
   </div>
 
-  <div class="card w-25 rounded-0" style="height: 650px;">
-
+  <div class="card w-50 rounded-end-0">
+    <h5 class="card-header grad-bg">Ficha do personagem</h5>
+    <div class="card-body d-flex flex-column">
+      <div id="cima" class="d-flex">
+        <div id="cima-esquerda" class="d-flex flex-column align-items-center w-50">
+          <!-- Aqui vai ser colocado uma imagem para o personagem, podendo modificá-lo se necessário -->
+          <img src="default-avatar.png" alt="Imagem do personagem" class="img-fluid rounded" style="max-height: 200px;">
+          <button type="button" class="btn btn-secondary mt-3">Alterar Imagem</button>
+        </div>
+        <div id="cima-direita" class="d-flex flex-column justify-content-center w-50">
+          <div class="card mt-3" id="cardAtributosPersonagem">
+            <div class="card-header">
+              <h5 class="card-title">Distribua os Pontos de atributo</h5>
+              <h6 class="card-subtitle fw-semibold pt-0">Pontos do Nível: <span id="spanPontosNivelPersonagem"
+                  class="fw-bold"></span></h6>
+              <h6 class="card-subtitle mb-1 fw-semibold">Pontos Restantes: <span id="spanPontosRestantesPersonagem"
+                  class="fw-bold"></span></h6>
+            </div>
+            <div class="card-body">
+              <div class="card w-90 m-0">
+                <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                  <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Força:</button>
+                  <button id="subtraiForcaPersonagem" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                  <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanForcaPersonagem"
+                      class="fw-semibold"></span></button>
+                  <button id="somaForcaPersonagem" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
+                </div>
+              </div>
+              <div class="card w-90 m-0 mt-3">
+                <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                  <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Destreza:</button>
+                  <button id="subtraiDestrezaPersonagem" type="button" class="btn btn-danger m-0  pt-0 pb-0">-</button>
+                  <button type="button" class="btn btn-outline-primary m-0  pt-0 pb-0" disabled><span id="spanDestrezaPersonagem"
+                      class="fw-semibold"></span></button>
+                  <button id="somaDestrezaPersonagem" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
+                </div>
+              </div>
+              <div class="card w-90 m-0 mt-3">
+                <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                  <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Percepção:</button>
+                  <button id="subtraiPercepcaoPersonagem" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                  <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanPercepcaoPersonagem"
+                      class="fw-semibold"></span></button>
+                  <button id="somaPercepcaoPersonagem" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
+                </div>
+              </div>
+              <div class="card w-90 m-0 mt-3">
+                <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                  <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Carisma:</button>
+                  <button id="subtraiCarismaPersonagem" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                  <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanCarismaPersonagem"
+                      class="fw-semibold"></span></button>
+                  <button id="somaCarismaPersonagem" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
+                </div>
+              </div>
+              <div class="card w-90 m-0 mt-3">
+                <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                  <button class="btn btn-outline-dark m-0 pt-0 pb-0 fw-bold w-50" disabled>Inteligência:</button>
+                  <button id="subtraiInteligenciaPersonagem" type="button" class="btn btn-danger m-0 pt-0 pb-0">-</button>
+                  <button type="button" class="btn btn-outline-primary m-0 pt-0 pb-0" disabled><span id="spanInteligenciaPersonagem"
+                      class="fw-semibold"></span></button>
+                  <button id="somaInteligenciaPersonagem" type="button" class="btn btn-success m-0 pt-0 pb-0">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="baixo" class="mt-3">
+        <!-- Biografia e outras informações -->
+        <h6>Biografia:</h6>
+        <textarea id="biografia" class="form-control" rows="4" placeholder="Escreva a história do personagem aqui..."></textarea>
+        <h6 class="mt-3">Outras Informações:</h6>
+        <textarea id="outras-informacoes" class="form-control" rows="3" placeholder="Adicione detalhes adicionais sobre o personagem..."></textarea>
+      </div>
+    </div>
   </div>
 
-  <div class="card mt-auto rounded-start-0" style="min-width: 375px; height: 650px;">
-    <h5 class="card-header">Criar Novo Personagem</h5>
+  <div class="card rounded-start-0">
+    <h5 class="card-header grad-bg">Criar Novo Personagem</h5>
     <div class="card-body">
       <form id="formularioPersonagem">
         <div class="form-group">
@@ -57,8 +131,10 @@
         <div class="card mt-3" id="cardAtributos">
           <div class="card-header">
             <h5 class="card-title">Distribua os Pontos de atributo</h5>
-            <h6 class="card-subtitle fw-semibold pt-0">Pontos do Nível: <span id="spanPontosNivel" class="fw-bold"></span></h6>
-            <h6 class="card-subtitle mb-1 fw-semibold">Pontos Restantes: <span id="spanPontosRestantes" class="fw-bold"></span></h6>
+            <h6 class="card-subtitle fw-semibold pt-0">Pontos do Nível: <span id="spanPontosNivel"
+                class="fw-bold"></span></h6>
+            <h6 class="card-subtitle mb-1 fw-semibold">Pontos Restantes: <span id="spanPontosRestantes"
+                class="fw-bold"></span></h6>
           </div>
           <div class="card-body">
             <div class="card w-90 m-0">

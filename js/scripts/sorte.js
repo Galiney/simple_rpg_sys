@@ -11,6 +11,10 @@
 
       let personagemArmazenado = personagens.find(personagem => personagem.nome === personagemSelecionado);
 
+      if (!personagemArmazenado){
+        resultadoElemento.textContent = 'personagem não encontrado'
+      }
+
       let personagem = new Personagem(personagemArmazenado.nome, personagemArmazenado.nivel, personagemArmazenado.alinhamento);
 
       let action = new Action(20, "sorte", personagem);
