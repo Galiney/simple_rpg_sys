@@ -89,6 +89,7 @@ function preencherCardPersonagem(idCard, nomePersonagem, personagens) {
   if (personagemSelecionado) {
     console.log('Personagem encontrado:', personagemSelecionado);
     cardTitle.textContent = personagemSelecionado.nome;
+    cardTitle.title = personagemSelecionado.nome;
     cardNivel.textContent = `Nível ${personagemSelecionado.nivel}`;
     cardAtributos.innerHTML = ''; // Limpa os atributos
 

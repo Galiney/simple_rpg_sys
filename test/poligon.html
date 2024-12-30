@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polígono com Número Aleatório</title>
+    <style>
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        .centered-span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="polygonCanvas"></canvas>
+        <span id="randomNumber" class="centered-span"></span>
+    </div>
+    <button id="startButton">Iniciar</button>
+
+    <script>
+        // Função para desenhar um polígono no canvas com orientação
+        function drawPolygon(context, x, y, radius, sides, orientation = 0, color = '#6c757d') {
+            if (sides < 3) return;
+
+            const angle = (2 * Math.PI) / sides;
+            const initialAngle = (Math.PI / 180) * orientation;
+            context.beginPath();
+            context.moveTo(
+                x + radius * Math.cos(initialAngle),
+                y + radius * Math.sin(initialAngle)
+            );
+
+            for (let i = 1; i < sides; i++) {
+                context.lineTo(
+                    x + radius * Math.cos(initialAngle + i * angle),
+                    y + radius * Math.sin(initialAngle + i * angle)
+                );
+            }
+
+            context.closePath();
+            context.fillStyle = color;
+            context.fill();
+            context.strokeStyle = color;
+            context.stroke();
+        }
+
+        // Função para atualizar o número aleatório exibido
+        function updateRandomNumber() {
+            const span = document.getElementById('randomNumber');
+            span.textContent = Math.floor(Math.random() * 9); 
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const canvas = document.getElementById('polygonCanvas');
+            const context = canvas.getContext('2d');
+
+            const canvasSize = 200;
+            canvas.width = canvasSize;
+            canvas.height = canvasSize;
+
+            const centerX = canvasSize / 2;
+            const centerY = canvasSize / 2;
+            let initialRadius = 50;
+            const sides = 3;
+            const polygonColor = '#6c757d';
+
+            const clickSound = new Audio('../assets/sound/click.mp3');
+            clickSound.volume = 0.1;
+
+            let interval;
+
+            document.getElementById('startButton').addEventListener('click', () => {
+                if (interval) return;
+
+                const repetitions = 5;
+                let counter = 0;
+
+                interval = setInterval(() => {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    drawPolygon(context, centerX, centerY, initialRadius, sides, 90, polygonColor); // Orientação definida como 0
+                    updateRandomNumber();
+                    clickSound.play();
+                    initialRadius = initialRadius === 50 ? 52 : 50;
+
+                    counter++;
+                    if (counter >= repetitions) {
+                        clearInterval(interval);
+                        interval = null;
+                    }
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
