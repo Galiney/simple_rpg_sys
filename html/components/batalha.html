@@ -14,11 +14,11 @@
         <div class="col">
           <label for="atributo">Atributo a Comparar</label>
           <select class="form-control" id="atributo" name="Atributo">
-            <option value="forca">Força</option>
+            <option value="forca" selected>Força</option>
             <option value="destreza">Destreza</option>
             <option value="percepcao">Percepção</option>
-            <option value="inteligencia">Inteligência</option>
             <option value="carisma">Carisma</option>
+            <option value="inteligencia">Inteligência</option>
           </select>
         </div>
 
@@ -52,12 +52,13 @@
         <div class="col">
           <div class="card text-center border-dark-subtle">
 
-            <div class="card-body">
+            <div class="card-body d-flex flex-column align-items-center">
               <h5 class="card-title">Rolagem dos Dados</h5>
-              <div class="row">
+              
+              <div class="d-flex row justify-content-center w-100">
 
                 <!-- DADO PERSONAGEM 1 -->
-                <div class="col-5 d-flex justify-content-center">
+                <div class="col-3 d-flex justify-content-center p-0 mx-2">
                   <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
                     style="width: 4rem; height: 4rem;">
                     <p class="mb-1 fw-bold fs-4">
@@ -69,12 +70,13 @@
                   </div>
                 </div>
 
-                <div class="col-2">
-                  <p class="fs-1">X</p>
+                <!-- DIVISOR X -->
+                <div class="col-3 p-0">
+                  <h1 class="my-1">X</h1>
                 </div>
 
                 <!-- DADO PERSONAGEM 2 -->
-                <div class="col-5 d-flex justify-content-center">
+                <div class="col-3 d-flex justify-content-center p-0 mx-2">
                   <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
                     style="width: 4rem; height: 4rem;">
                     <p class="mb-1 fw-bold fs-4">
@@ -94,7 +96,7 @@
 
             <!-- RESULTADO -->
             <div class="card-footer">
-              <p class="m-0">Resultado: <span class="fw-semibold" id="resultado"></span></p>
+              <p class="m-0 d-flex flex-column align-items-center">Resultado: <span class="fw-semibold" id="resultado"></span></p>
             </div>
           </div>
         </div>

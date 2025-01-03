@@ -1,13 +1,17 @@
-<div class="d-flex justify-content-center w-100 h-75 mt-5">
-  <div class="card w-75 border-dark-subtle rounded-3">
+<!-- CARD Desafio -->
+<div class="d-flex justify-content-center w-100 mt-2">
+  <div class="card w-75 border-dark-subtle">
     <h5 class="card-header grad-bg">Desafio</h5>
-    <div class="card-body container">
+    <div class="card-body">
+      
+      <!-- SELEÇÃO DE PERSONAGENS E ATRIBUTOS -->
       <div class="row">
-        <div class="form-group col">
+        <div class="col">
           <label for="personagem">Personagem</label>
           <select class="form-control" id="personagem" name="Personagem"></select>
         </div>
-        <div class="form-group col">
+
+        <div class="col">
           <label for="atributo">Atributo a Comparar</label>
           <select class="form-control" id="atributo" name="Atributo">
             <option value="forca" selected>Força</option>
@@ -17,7 +21,7 @@
             <option value="inteligencia">Inteligência</option>
           </select>
         </div>
-        <div class="form-group col">
+        <div class="col">
           <label for="nivelDesafio">Dificuldade</label>
           <select class="form-control" id="nivelDesafio" name="NivelDesafio">
             <option value="1" selected>Nível 1</option>
@@ -34,12 +38,15 @@
         </div>
       </div>
 
+      <!-- ATRIBUTOS DE PERSONAGENS, DADOS E RESULTADOS -->
       <div class="row mt-2">
+        
+        <!-- PERSONAGEM -->
         <div class="col">
           <div class="card border-dark-subtle" id="cardPersonagem">
             <div class="card-header grad-bg">
-              <h5 class="card-title">Nenhum personagem criado</h5>
-              <h6 class="card-subtitle mb-2">Crie um personagem em "Personagens"</h6>
+              <h5 class="card-title" title="Nenhum personagem criado">Nenhum personagem criado</h5>
+              <h6 class="card-subtitle">Crie um personagem em "Personagens"</h6>
             </div>
             <div class="card-body">
               <p class="mb-1">Força: <span class="fw-semibold"></span></p>
@@ -51,12 +58,17 @@
           </div>
         </div>
 
+        <!-- ROLAGEM DE DADOS E RESULTADO -->
         <div class="col">
           <div class="card text-center border-dark-subtle">
-            <div class="card-body">
+            
+            <div class="card-body d-flex flex-column align-items-center">
               <h5 class="card-title">Rolagem dos Dados</h5>
-              <div class="row mt-4">
-                <div class="col-5 d-flex justify-content-center">
+
+              <div class="d-flex row justify-content-center w-100">
+
+                <!-- DADO PERSONAGEM -->
+                <div class="col-3 d-flex justify-content-center p-0 mx-2">
                   <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
                     style="width: 4rem; height: 4rem;">
                     <p class="mb-1 fw-bold fs-4">
@@ -67,10 +79,14 @@
                     </p>
                   </div>
                 </div>
-                <div class="col-2 d-flex justify-content-center align-items-center">
-                  <p class="fs-1">X</p>
+
+                <!-- DIVISOR X -->
+                <div class="col-3 p-0">
+                  <h1 class="my-1">X</h1>
                 </div>
-                <div class="col-5 d-flex justify-content-center">
+
+                <!-- DADO DESAFIO -->
+                <div class="col-3 d-flex justify-content-center p-0 mx-2">
                   <div class="border border-secondary rounded-5 d-flex justify-content-center align-items-center"
                     style="width: 4rem; height: 4rem;">
                     <p class="mb-1 fw-bold fs-4">
@@ -81,20 +97,26 @@
                     </p>
                   </div>
                 </div>
+
               </div>
+
+              <!-- BOTÃO ROLAR -->
               <a href="#" class="btn accent-bg" id="botaoDesafio">Rolar</a>
             </div>
+
+            <!-- RESULTADO -->
             <div class="card-footer">
-              <p class="m-0">Resultado: <span class="fw-semibold" id="resultado"></span></p>
+              <p class="m-0 d-flex flex-column align-items-center">Resultado: <span class="fw-semibold" id="resultado"></span></p>
             </div>
           </div>
         </div>
 
+        <!-- DESAFIO -->
         <div class="col">
           <div class="card border-dark-subtle" id="cardDesafio">
             <div class="card-header grad-bg">
               <h5 class="card-title">Desafio</h5>
-              <h6 class="card-subtitle mb-2 ">Desafio nível: <span class="fw-semibold" id="nivelEscolhido">1</span></h6>
+              <h6 class="card-subtitle">Desafio nível: <span class="fw-semibold" id="nivelEscolhido">1</span></h6>
             </div>
             <div class="card-body">
               <p id="atributoEscolhido">Dificuldade: <span class="fw-semibold" id="dificuldade"></span></p>

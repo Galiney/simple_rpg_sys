@@ -21,8 +21,10 @@
 
       let resultado = action.sorte();
 
-      resultadoElemento.textContent = resultado[1];
-      dadoSorteElemento.textContent = resultado[2];
-      dadoAzarElemento.textContent = resultado[3];
-
+      if (Array.isArray(resultado) && resultado.length >= 4) {
+        animarDado('dadoSorte', 'resultado', resultado[1], resultado[3])
+        animarDado('dadoAzar', 'resultado', resultado[2], resultado[3])
+      } else {
+        resultadoElemento.textContent = 'Erro na batalha. Resultado inválido.';
+      }
   });
